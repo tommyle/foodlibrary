@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditInfoTableViewCell" rowHeight="198" id="KGk-i7-Jjw" customClass="EditInfoTableViewCell" customModule="foodlibrary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="197"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7f-ix-kM4">
+                        <rect key="frame" x="8" y="7" width="304" height="30"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Serving Size" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUd-wj-Bic">
+                        <rect key="frame" x="8" y="45" width="304" height="30"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Difficulty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="By8-oh-Ibq">
+                        <rect key="frame" x="8" y="83" width="304" height="30"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Prep Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="er7-ma-FGK">
+                        <rect key="frame" x="8" y="121" width="304" height="30"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cook Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XI4-Qw-DM4">
+                        <rect key="frame" x="8" y="159" width="304" height="30"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XI4-Qw-DM4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3CP-r8-4LJ"/>
+                    <constraint firstItem="By8-oh-Ibq" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3hl-dn-PJW"/>
+                    <constraint firstItem="By8-oh-Ibq" firstAttribute="top" secondItem="gUd-wj-Bic" secondAttribute="bottom" constant="8" id="9sc-iL-1qi"/>
+                    <constraint firstItem="v7f-ix-kM4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Cpz-Tj-NtD"/>
+                    <constraint firstItem="er7-ma-FGK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="H11-Do-uBJ"/>
+                    <constraint firstItem="v7f-ix-kM4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="JOV-Uq-HrS"/>
+                    <constraint firstItem="XI4-Qw-DM4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="LCn-1y-6xe"/>
+                    <constraint firstItem="By8-oh-Ibq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="WlN-3u-bpm"/>
+                    <constraint firstItem="gUd-wj-Bic" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="X8d-TY-cgE"/>
+                    <constraint firstItem="XI4-Qw-DM4" firstAttribute="top" secondItem="er7-ma-FGK" secondAttribute="bottom" constant="8" id="XP9-Ge-9sl"/>
+                    <constraint firstItem="gUd-wj-Bic" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="bCn-x3-pOG"/>
+                    <constraint firstItem="er7-ma-FGK" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="my3-S2-Ksn"/>
+                    <constraint firstItem="v7f-ix-kM4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="ndk-tu-vj7"/>
+                    <constraint firstItem="XI4-Qw-DM4" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="obV-kr-Hxz"/>
+                    <constraint firstItem="gUd-wj-Bic" firstAttribute="top" secondItem="v7f-ix-kM4" secondAttribute="bottom" constant="8" id="sGR-pa-zXg"/>
+                    <constraint firstItem="er7-ma-FGK" firstAttribute="top" secondItem="By8-oh-Ibq" secondAttribute="bottom" constant="8" id="zxh-nh-fzG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="v7f-ix-kM4" id="Dzb-Sf-uAa"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="231"/>
+        </tableViewCell>
+    </objects>
+</document>

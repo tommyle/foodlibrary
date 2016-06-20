@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecipeListingViewController" customModule="foodlibrary" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="iwb-v7-ENk" id="vlF-9M-qQe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iwb-v7-ENk">
+                    <rect key="frame" x="8" y="8" width="584" height="584"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="iwb-v7-ENk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="J8R-31-8xd"/>
+                <constraint firstItem="iwb-v7-ENk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="SmZ-eG-UKd"/>
+                <constraint firstAttribute="bottom" secondItem="iwb-v7-ENk" secondAttribute="bottom" constant="8" id="jHz-4a-6oH"/>
+                <constraint firstAttribute="trailing" secondItem="iwb-v7-ENk" secondAttribute="trailing" constant="8" id="xTw-A3-C70"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06B7A8CF39526EAE5C6CFF96 /* libPods-foodlibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C478750A68EBB6705DEF0B0 /* libPods-foodlibrary.a */; };
+		721FEE9C1D15BC4D007E6463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEE9B1D15BC4D007E6463 /* AppDelegate.swift */; };
+		721FEE9E1D15BC4D007E6463 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEE9D1D15BC4D007E6463 /* FirstViewController.swift */; };
+		721FEEA01D15BC4D007E6463 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEE9F1D15BC4D007E6463 /* SecondViewController.swift */; };
+		721FEEA31D15BC4D007E6463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 721FEEA11D15BC4D007E6463 /* Main.storyboard */; };
+		721FEEA51D15BC4D007E6463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 721FEEA41D15BC4D007E6463 /* Assets.xcassets */; };
+		721FEEA81D15BC4E007E6463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 721FEEA61D15BC4E007E6463 /* LaunchScreen.storyboard */; };
+		721FEEB21D15BE39007E6463 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 721FEEB01D15BE39007E6463 /* Model.xcdatamodeld */; };
+		721FEECB1D161FD5007E6463 /* EditRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEEC91D161FD5007E6463 /* EditRecipeViewController.swift */; };
+		721FEECC1D161FD5007E6463 /* EditRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721FEECA1D161FD5007E6463 /* EditRecipeViewController.xib */; };
+		721FEED01D162E6C007E6463 /* EditRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEECE1D162E6C007E6463 /* EditRecipeTableViewCell.swift */; };
+		721FEED11D162E6C007E6463 /* EditRecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721FEECF1D162E6C007E6463 /* EditRecipeTableViewCell.xib */; };
+		727A71691D1772B100AAF0A1 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727A71671D1772B100AAF0A1 /* RecipeViewController.swift */; };
+		727A716A1D1772B100AAF0A1 /* RecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727A71681D1772B100AAF0A1 /* RecipeViewController.xib */; };
+		727A716D1D17739600AAF0A1 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727A716B1D17739600AAF0A1 /* RecipeTableViewCell.swift */; };
+		727A716E1D17739600AAF0A1 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727A716C1D17739600AAF0A1 /* RecipeTableViewCell.xib */; };
+		727A71711D1783B900AAF0A1 /* EditInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727A716F1D1783B900AAF0A1 /* EditInfoTableViewCell.swift */; };
+		727A71721D1783B900AAF0A1 /* EditInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727A71701D1783B900AAF0A1 /* EditInfoTableViewCell.xib */; };
+		72AAAD631D1718B0005FBEF2 /* RecipeListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */; };
+		72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */; };
+		72E0ED731D1702DB0056044C /* RecipeListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED711D1702DB0056044C /* RecipeListingViewController.swift */; };
+		72E0ED741D1702DB0056044C /* RecipeListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72E0ED721D1702DB0056044C /* RecipeListingViewController.xib */; };
+		72E0ED9E1D1713430056044C /* Instruction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED961D1713430056044C /* Instruction+CoreDataProperties.swift */; };
+		72E0ED9F1D1713430056044C /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED971D1713430056044C /* Instruction.swift */; };
+		72E0EDA01D1713430056044C /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED981D1713430056044C /* Recipe+CoreDataProperties.swift */; };
+		72E0EDA11D1713430056044C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED991D1713430056044C /* Recipe.swift */; };
+		72E0EDA21D1713430056044C /* Ingredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED9A1D1713430056044C /* Ingredient+CoreDataProperties.swift */; };
+		72E0EDA31D1713430056044C /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED9B1D1713430056044C /* Ingredient.swift */; };
+		72E0EDA41D1713430056044C /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED9C1D1713430056044C /* Category+CoreDataProperties.swift */; };
+		72E0EDA51D1713430056044C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED9D1D1713430056044C /* Category.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		16EE633E6CE0C47419D3AB17 /* Pods-foodlibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodlibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodlibrary/Pods-foodlibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		6C478750A68EBB6705DEF0B0 /* libPods-foodlibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-foodlibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		721FEE981D15BC4D007E6463 /* foodlibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodlibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		721FEE9B1D15BC4D007E6463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		721FEE9D1D15BC4D007E6463 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		721FEE9F1D15BC4D007E6463 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		721FEEA21D15BC4D007E6463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		721FEEA41D15BC4D007E6463 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		721FEEA71D15BC4E007E6463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		721FEEA91D15BC4E007E6463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		721FEEB11D15BE39007E6463 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		721FEEC31D15C481007E6463 /* FoodLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
+		721FEEC91D161FD5007E6463 /* EditRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRecipeViewController.swift; sourceTree = "<group>"; };
+		721FEECA1D161FD5007E6463 /* EditRecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditRecipeViewController.xib; sourceTree = "<group>"; };
+		721FEECE1D162E6C007E6463 /* EditRecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRecipeTableViewCell.swift; sourceTree = "<group>"; };
+		721FEECF1D162E6C007E6463 /* EditRecipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditRecipeTableViewCell.xib; sourceTree = "<group>"; };
+		727A71671D1772B100AAF0A1 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		727A71681D1772B100AAF0A1 /* RecipeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeViewController.xib; sourceTree = "<group>"; };
+		727A716B1D17739600AAF0A1 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		727A716C1D17739600AAF0A1 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
+		727A716F1D1783B900AAF0A1 /* EditInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoTableViewCell.swift; sourceTree = "<group>"; };
+		727A71701D1783B900AAF0A1 /* EditInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditInfoTableViewCell.xib; sourceTree = "<group>"; };
+		72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListingTableViewCell.swift; sourceTree = "<group>"; };
+		72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListingTableViewCell.xib; sourceTree = "<group>"; };
+		72E0ED711D1702DB0056044C /* RecipeListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListingViewController.swift; sourceTree = "<group>"; };
+		72E0ED721D1702DB0056044C /* RecipeListingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListingViewController.xib; sourceTree = "<group>"; };
+		72E0ED851D1712B40056044C /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		72E0ED961D1713430056044C /* Instruction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Instruction+CoreDataProperties.swift"; path = "Model/Instruction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72E0ED971D1713430056044C /* Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Instruction.swift; path = Model/Instruction.swift; sourceTree = "<group>"; };
+		72E0ED981D1713430056044C /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataProperties.swift"; path = "Model/Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72E0ED991D1713430056044C /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = Model/Recipe.swift; sourceTree = "<group>"; };
+		72E0ED9A1D1713430056044C /* Ingredient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ingredient+CoreDataProperties.swift"; path = "Model/Ingredient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72E0ED9B1D1713430056044C /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ingredient.swift; path = Model/Ingredient.swift; sourceTree = "<group>"; };
+		72E0ED9C1D1713430056044C /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "Model/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		72E0ED9D1D1713430056044C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Model/Category.swift; sourceTree = "<group>"; };
+		75C81CD7040DED6DE3F5C807 /* Pods-foodlibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodlibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-foodlibrary/Pods-foodlibrary.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		721FEE951D15BC4D007E6463 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B7A8CF39526EAE5C6CFF96 /* libPods-foodlibrary.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0EAD5624E57B431E7B633BD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				16EE633E6CE0C47419D3AB17 /* Pods-foodlibrary.debug.xcconfig */,
+				75C81CD7040DED6DE3F5C807 /* Pods-foodlibrary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		721FEE8F1D15BC4D007E6463 = {
+			isa = PBXGroup;
+			children = (
+				721FEE9A1D15BC4D007E6463 /* foodlibrary */,
+				721FEE991D15BC4D007E6463 /* Products */,
+				0EAD5624E57B431E7B633BD5 /* Pods */,
+				A83EE9E688FDFEDB11A3DE34 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		721FEE991D15BC4D007E6463 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				721FEE981D15BC4D007E6463 /* foodlibrary.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		721FEE9A1D15BC4D007E6463 /* foodlibrary */ = {
+			isa = PBXGroup;
+			children = (
+				721FEECD1D161FE4007E6463 /* Support Files */,
+				721FEEAF1D15BE19007E6463 /* Model */,
+				727A71731D1783C400AAF0A1 /* Edit Recipe */,
+				721FEEA11D15BC4D007E6463 /* Main.storyboard */,
+				721FEE9B1D15BC4D007E6463 /* AppDelegate.swift */,
+				721FEE9D1D15BC4D007E6463 /* FirstViewController.swift */,
+				721FEE9F1D15BC4D007E6463 /* SecondViewController.swift */,
+				72E0ED711D1702DB0056044C /* RecipeListingViewController.swift */,
+				72E0ED721D1702DB0056044C /* RecipeListingViewController.xib */,
+				72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */,
+				72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */,
+				727A71671D1772B100AAF0A1 /* RecipeViewController.swift */,
+				727A71681D1772B100AAF0A1 /* RecipeViewController.xib */,
+				727A716B1D17739600AAF0A1 /* RecipeTableViewCell.swift */,
+				727A716C1D17739600AAF0A1 /* RecipeTableViewCell.xib */,
+			);
+			path = foodlibrary;
+			sourceTree = "<group>";
+		};
+		721FEEAF1D15BE19007E6463 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72E0ED961D1713430056044C /* Instruction+CoreDataProperties.swift */,
+				72E0ED971D1713430056044C /* Instruction.swift */,
+				72E0ED981D1713430056044C /* Recipe+CoreDataProperties.swift */,
+				72E0ED991D1713430056044C /* Recipe.swift */,
+				72E0ED9A1D1713430056044C /* Ingredient+CoreDataProperties.swift */,
+				72E0ED9B1D1713430056044C /* Ingredient.swift */,
+				72E0ED9C1D1713430056044C /* Category+CoreDataProperties.swift */,
+				72E0ED9D1D1713430056044C /* Category.swift */,
+				721FEEB01D15BE39007E6463 /* Model.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		721FEECD1D161FE4007E6463 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				721FEEA41D15BC4D007E6463 /* Assets.xcassets */,
+				721FEEA61D15BC4E007E6463 /* LaunchScreen.storyboard */,
+				721FEEA91D15BC4E007E6463 /* Info.plist */,
+				721FEEC31D15C481007E6463 /* FoodLibrary-Bridging-Header.h */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		727A71731D1783C400AAF0A1 /* Edit Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				721FEEC91D161FD5007E6463 /* EditRecipeViewController.swift */,
+				721FEECA1D161FD5007E6463 /* EditRecipeViewController.xib */,
+				721FEECE1D162E6C007E6463 /* EditRecipeTableViewCell.swift */,
+				721FEECF1D162E6C007E6463 /* EditRecipeTableViewCell.xib */,
+				727A716F1D1783B900AAF0A1 /* EditInfoTableViewCell.swift */,
+				727A71701D1783B900AAF0A1 /* EditInfoTableViewCell.xib */,
+			);
+			name = "Edit Recipe";
+			sourceTree = "<group>";
+		};
+		A83EE9E688FDFEDB11A3DE34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C478750A68EBB6705DEF0B0 /* libPods-foodlibrary.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		721FEE971D15BC4D007E6463 /* foodlibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 721FEEAC1D15BC4E007E6463 /* Build configuration list for PBXNativeTarget "foodlibrary" */;
+			buildPhases = (
+				39860ECF088438AC8ECC858E /* Check Pods Manifest.lock */,
+				721FEE941D15BC4D007E6463 /* Sources */,
+				721FEE951D15BC4D007E6463 /* Frameworks */,
+				721FEE961D15BC4D007E6463 /* Resources */,
+				D140123982F99446CF6B18FC /* Embed Pods Frameworks */,
+				FECFCB505D1B2F354F594153 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = foodlibrary;
+			productName = foodlibrary;
+			productReference = 721FEE981D15BC4D007E6463 /* foodlibrary.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		721FEE901D15BC4D007E6463 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Tommy Le";
+				TargetAttributes = {
+					721FEE971D15BC4D007E6463 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 721FEE931D15BC4D007E6463 /* Build configuration list for PBXProject "foodlibrary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 721FEE8F1D15BC4D007E6463;
+			productRefGroup = 721FEE991D15BC4D007E6463 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				721FEE971D15BC4D007E6463 /* foodlibrary */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		721FEE961D15BC4D007E6463 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				727A716A1D1772B100AAF0A1 /* RecipeViewController.xib in Resources */,
+				721FEEA81D15BC4E007E6463 /* LaunchScreen.storyboard in Resources */,
+				721FEEA51D15BC4D007E6463 /* Assets.xcassets in Resources */,
+				721FEECC1D161FD5007E6463 /* EditRecipeViewController.xib in Resources */,
+				72E0ED741D1702DB0056044C /* RecipeListingViewController.xib in Resources */,
+				727A71721D1783B900AAF0A1 /* EditInfoTableViewCell.xib in Resources */,
+				72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */,
+				721FEEA31D15BC4D007E6463 /* Main.storyboard in Resources */,
+				721FEED11D162E6C007E6463 /* EditRecipeTableViewCell.xib in Resources */,
+				727A716E1D17739600AAF0A1 /* RecipeTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39860ECF088438AC8ECC858E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D140123982F99446CF6B18FC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foodlibrary/Pods-foodlibrary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FECFCB505D1B2F354F594153 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foodlibrary/Pods-foodlibrary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		721FEE941D15BC4D007E6463 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72AAAD631D1718B0005FBEF2 /* RecipeListingTableViewCell.swift in Sources */,
+				72E0ED9F1D1713430056044C /* Instruction.swift in Sources */,
+				72E0EDA31D1713430056044C /* Ingredient.swift in Sources */,
+				727A716D1D17739600AAF0A1 /* RecipeTableViewCell.swift in Sources */,
+				727A71691D1772B100AAF0A1 /* RecipeViewController.swift in Sources */,
+				727A71711D1783B900AAF0A1 /* EditInfoTableViewCell.swift in Sources */,
+				72E0ED731D1702DB0056044C /* RecipeListingViewController.swift in Sources */,
+				721FEEA01D15BC4D007E6463 /* SecondViewController.swift in Sources */,
+				721FEE9C1D15BC4D007E6463 /* AppDelegate.swift in Sources */,
+				721FEE9E1D15BC4D007E6463 /* FirstViewController.swift in Sources */,
+				72E0EDA01D1713430056044C /* Recipe+CoreDataProperties.swift in Sources */,
+				72E0EDA41D1713430056044C /* Category+CoreDataProperties.swift in Sources */,
+				72E0EDA21D1713430056044C /* Ingredient+CoreDataProperties.swift in Sources */,
+				72E0ED9E1D1713430056044C /* Instruction+CoreDataProperties.swift in Sources */,
+				721FEED01D162E6C007E6463 /* EditRecipeTableViewCell.swift in Sources */,
+				72E0EDA51D1713430056044C /* Category.swift in Sources */,
+				721FEECB1D161FD5007E6463 /* EditRecipeViewController.swift in Sources */,
+				721FEEB21D15BE39007E6463 /* Model.xcdatamodeld in Sources */,
+				72E0EDA11D1713430056044C /* Recipe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		721FEEA11D15BC4D007E6463 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				721FEEA21D15BC4D007E6463 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		721FEEA61D15BC4E007E6463 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				721FEEA71D15BC4E007E6463 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		721FEEAA1D15BC4E007E6463 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		721FEEAB1D15BC4E007E6463 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		721FEEAD1D15BC4E007E6463 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16EE633E6CE0C47419D3AB17 /* Pods-foodlibrary.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = foodlibrary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.tommyle.foodlibrary.foodlibrary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "foodlibrary/FoodLibrary-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		721FEEAE1D15BC4E007E6463 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C81CD7040DED6DE3F5C807 /* Pods-foodlibrary.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = foodlibrary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.tommyle.foodlibrary.foodlibrary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "foodlibrary/FoodLibrary-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		721FEE931D15BC4D007E6463 /* Build configuration list for PBXProject "foodlibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				721FEEAA1D15BC4E007E6463 /* Debug */,
+				721FEEAB1D15BC4E007E6463 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		721FEEAC1D15BC4E007E6463 /* Build configuration list for PBXNativeTarget "foodlibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				721FEEAD1D15BC4E007E6463 /* Debug */,
+				721FEEAE1D15BC4E007E6463 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		721FEEB01D15BE39007E6463 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				72E0ED851D1712B40056044C /* Model 2.xcdatamodel */,
+				721FEEB11D15BE39007E6463 /* Model.xcdatamodel */,
+			);
+			currentVersion = 721FEEB11D15BE39007E6463 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Model/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 721FEE901D15BC4D007E6463 /* Project object */;
+}
