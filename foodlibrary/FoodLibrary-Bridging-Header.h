@@ -12,4 +12,6 @@
 #define MR_SHORTHAND
 #import "CoreData+MagicalRecord.h"
 
+#import "ParallaxHeaderView.h"
+
 #endif /* FoodLibrary_Bridging_Header_h */

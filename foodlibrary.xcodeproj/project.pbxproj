@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		06B7A8CF39526EAE5C6CFF96 /* libPods-foodlibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C478750A68EBB6705DEF0B0 /* libPods-foodlibrary.a */; };
+		721519561D19A12100CFF554 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 721519551D19A12100CFF554 /* ParallaxHeaderView.m */; };
+		721519591D19A1BD00CFF554 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 721519581D19A1BD00CFF554 /* UIImage+ImageEffects.m */; };
 		721FEE9C1D15BC4D007E6463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEE9B1D15BC4D007E6463 /* AppDelegate.swift */; };
 		721FEE9E1D15BC4D007E6463 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEE9D1D15BC4D007E6463 /* FirstViewController.swift */; };
 		721FEEA01D15BC4D007E6463 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEE9F1D15BC4D007E6463 /* SecondViewController.swift */; };
@@ -44,6 +46,10 @@
 /* Begin PBXFileReference section */
 		16EE633E6CE0C47419D3AB17 /* Pods-foodlibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodlibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodlibrary/Pods-foodlibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		6C478750A68EBB6705DEF0B0 /* libPods-foodlibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-foodlibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		721519541D19A12100CFF554 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
+		721519551D19A12100CFF554 /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
+		721519571D19A1BD00CFF554 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		721519581D19A1BD00CFF554 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		721FEE981D15BC4D007E6463 /* foodlibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodlibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		721FEE9B1D15BC4D007E6463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		721FEE9D1D15BC4D007E6463 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +109,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		721519521D19A0FF00CFF554 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				721519531D19A10C00CFF554 /* ParallaxHeaderView */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		721519531D19A10C00CFF554 /* ParallaxHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				721519571D19A1BD00CFF554 /* UIImage+ImageEffects.h */,
+				721519581D19A1BD00CFF554 /* UIImage+ImageEffects.m */,
+				721519541D19A12100CFF554 /* ParallaxHeaderView.h */,
+				721519551D19A12100CFF554 /* ParallaxHeaderView.m */,
+			);
+			name = ParallaxHeaderView;
+			sourceTree = "<group>";
+		};
 		721FEE8F1D15BC4D007E6463 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +149,7 @@
 		721FEE9A1D15BC4D007E6463 /* foodlibrary */ = {
 			isa = PBXGroup;
 			children = (
+				721519521D19A0FF00CFF554 /* Libraries */,
 				721FEECD1D161FE4007E6463 /* Support Files */,
 				721FEEAF1D15BE19007E6463 /* Model */,
 				727A71731D1783C400AAF0A1 /* Edit Recipe */,
@@ -334,8 +360,10 @@
 				721FEE9C1D15BC4D007E6463 /* AppDelegate.swift in Sources */,
 				721FEE9E1D15BC4D007E6463 /* FirstViewController.swift in Sources */,
 				72E0EDA01D1713430056044C /* Recipe+CoreDataProperties.swift in Sources */,
+				721519561D19A12100CFF554 /* ParallaxHeaderView.m in Sources */,
 				72E0EDA41D1713430056044C /* Category+CoreDataProperties.swift in Sources */,
 				72E0EDA21D1713430056044C /* Ingredient+CoreDataProperties.swift in Sources */,
+				721519591D19A1BD00CFF554 /* UIImage+ImageEffects.m in Sources */,
 				72E0ED9E1D1713430056044C /* Instruction+CoreDataProperties.swift in Sources */,
 				721FEED01D162E6C007E6463 /* EditRecipeTableViewCell.swift in Sources */,
 				72E0EDA51D1713430056044C /* Category.swift in Sources */,

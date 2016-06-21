@@ -76,15 +76,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-header" id="eDq-zg-rD8">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
                         <sections>
                             <tableViewSection headerTitle="Recipe Information" id="G5w-zX-oP2" userLabel="Recipe Information">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dRK-JM-LNh">
-                                        <rect key="frame" x="0.0" y="349.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dRK-JM-LNh" id="ZWz-19-tLe">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -117,7 +113,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="l6h-bF-gcY">
-                                        <rect key="frame" x="0.0" y="393.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="93.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6h-bF-gcY" id="2wU-7Y-5bx">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -150,7 +146,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kJf-y8-Yog">
-                                        <rect key="frame" x="0.0" y="437.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="137.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kJf-y8-Yog" id="fOa-HG-KJ4">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -183,7 +179,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sMP-BH-K8d">
-                                        <rect key="frame" x="0.0" y="481.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="181.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sMP-BH-K8d" id="ZmU-Iz-cMS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -220,7 +216,7 @@
                             <tableViewSection headerTitle="Ingredients" id="tll-NB-k0d">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="154" id="T49-7d-E3S">
-                                        <rect key="frame" x="0.0" y="575.5" width="600" height="154"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="600" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T49-7d-E3S" id="bbH-YA-JEl">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="153.5"/>
@@ -251,7 +247,7 @@
                             <tableViewSection headerTitle="Instructions" id="HML-VD-GjB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="154" id="7Xd-Zh-bi6">
-                                        <rect key="frame" x="0.0" y="779.5" width="600" height="154"/>
+                                        <rect key="frame" x="0.0" y="479.5" width="600" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Xd-Zh-bi6" id="2Fe-ID-fKu">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="153.5"/>
@@ -407,7 +403,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg-header" width="1242" height="825"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
