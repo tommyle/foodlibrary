@@ -16,17 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="pfL-nR-jhd">
-                    <rect key="frame" x="8" y="8" width="584" height="584"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="pfL-nR-jhd">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="pfL-nR-jhd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="C7j-AC-muz"/>
-                <constraint firstItem="pfL-nR-jhd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="E3Q-r6-mMs"/>
-                <constraint firstAttribute="bottom" secondItem="pfL-nR-jhd" secondAttribute="bottom" constant="8" id="UAU-Ks-zrk"/>
-                <constraint firstAttribute="trailing" secondItem="pfL-nR-jhd" secondAttribute="trailing" constant="8" id="dY1-HO-rzR"/>
+                <constraint firstItem="pfL-nR-jhd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="C7j-AC-muz"/>
+                <constraint firstItem="pfL-nR-jhd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E3Q-r6-mMs"/>
+                <constraint firstAttribute="bottom" secondItem="pfL-nR-jhd" secondAttribute="bottom" id="UAU-Ks-zrk"/>
+                <constraint firstAttribute="trailing" secondItem="pfL-nR-jhd" secondAttribute="trailing" id="dY1-HO-rzR"/>
             </constraints>
         </view>
     </objects>

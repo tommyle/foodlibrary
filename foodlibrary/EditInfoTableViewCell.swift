@@ -10,10 +10,13 @@ import UIKit
 
 class EditInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var label: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.selectionStyle = UITableViewCellSelectionStyle.None
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

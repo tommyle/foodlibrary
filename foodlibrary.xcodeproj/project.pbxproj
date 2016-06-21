@@ -25,6 +25,8 @@
 		727A716E1D17739600AAF0A1 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727A716C1D17739600AAF0A1 /* RecipeTableViewCell.xib */; };
 		727A71711D1783B900AAF0A1 /* EditInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727A716F1D1783B900AAF0A1 /* EditInfoTableViewCell.swift */; };
 		727A71721D1783B900AAF0A1 /* EditInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727A71701D1783B900AAF0A1 /* EditInfoTableViewCell.xib */; };
+		727ACD201D18F463005BE002 /* EditRecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727ACD1F1D18F463005BE002 /* EditRecipeTableViewController.swift */; };
+		727ACD221D18F633005BE002 /* EditRecipeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727ACD211D18F633005BE002 /* EditRecipeTestViewController.swift */; };
 		72AAAD631D1718B0005FBEF2 /* RecipeListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */; };
 		72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */; };
 		72E0ED731D1702DB0056044C /* RecipeListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED711D1702DB0056044C /* RecipeListingViewController.swift */; };
@@ -62,6 +64,8 @@
 		727A716C1D17739600AAF0A1 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		727A716F1D1783B900AAF0A1 /* EditInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoTableViewCell.swift; sourceTree = "<group>"; };
 		727A71701D1783B900AAF0A1 /* EditInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditInfoTableViewCell.xib; sourceTree = "<group>"; };
+		727ACD1F1D18F463005BE002 /* EditRecipeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRecipeTableViewController.swift; sourceTree = "<group>"; };
+		727ACD211D18F633005BE002 /* EditRecipeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRecipeTestViewController.swift; sourceTree = "<group>"; };
 		72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListingTableViewCell.swift; sourceTree = "<group>"; };
 		72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListingTableViewCell.xib; sourceTree = "<group>"; };
 		72E0ED711D1702DB0056044C /* RecipeListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListingViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				721FEECF1D162E6C007E6463 /* EditRecipeTableViewCell.xib */,
 				727A716F1D1783B900AAF0A1 /* EditInfoTableViewCell.swift */,
 				727A71701D1783B900AAF0A1 /* EditInfoTableViewCell.xib */,
+				727ACD1F1D18F463005BE002 /* EditRecipeTableViewController.swift */,
+				727ACD211D18F633005BE002 /* EditRecipeTestViewController.swift */,
 			);
 			name = "Edit Recipe";
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				72AAAD631D1718B0005FBEF2 /* RecipeListingTableViewCell.swift in Sources */,
 				72E0ED9F1D1713430056044C /* Instruction.swift in Sources */,
 				72E0EDA31D1713430056044C /* Ingredient.swift in Sources */,
+				727ACD201D18F463005BE002 /* EditRecipeTableViewController.swift in Sources */,
 				727A716D1D17739600AAF0A1 /* RecipeTableViewCell.swift in Sources */,
 				727A71691D1772B100AAF0A1 /* RecipeViewController.swift in Sources */,
 				727A71711D1783B900AAF0A1 /* EditInfoTableViewCell.swift in Sources */,
@@ -335,6 +342,7 @@
 				721FEECB1D161FD5007E6463 /* EditRecipeViewController.swift in Sources */,
 				721FEEB21D15BE39007E6463 /* Model.xcdatamodeld in Sources */,
 				72E0EDA11D1713430056044C /* Recipe.swift in Sources */,
+				727ACD221D18F633005BE002 /* EditRecipeTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

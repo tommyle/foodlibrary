@@ -53,7 +53,7 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
         
         let cell = tableView.dequeueReusableCellWithIdentifier("RecipeListingTableViewCell", forIndexPath: indexPath) as! RecipeListingTableViewCell
         
-        cell.textLabel?.text = recipes[indexPath.row].name!
+        cell.textLabel?.text = recipes[indexPath.row].name
         
         return cell
     }
