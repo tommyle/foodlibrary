@@ -286,6 +286,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="ingredientsView" destination="9hY-5e-XOn" id="zTP-VS-wC2"/>
                         <outlet property="nameField" destination="Irf-4G-j62" id="ZDS-cC-fUE"/>
                     </connections>
                 </tableViewController>

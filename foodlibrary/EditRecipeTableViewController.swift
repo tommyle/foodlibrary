@@ -11,11 +11,10 @@ import UIKit
 private let kTableHeaderHeight: CGFloat = 300.0
 private let kTableHeaderCutAway: CGFloat = 60.0
 
-class EditRecipeTableViewController: UITableViewController {
+class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
 
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var cookTimeField: UITextField!
-    @IBOutlet weak var prepTimeField: UITextField!
+    @IBOutlet weak var ingredientsView: UITextView!
     
     var headerView: UIView!
     
@@ -31,6 +30,8 @@ class EditRecipeTableViewController: UITableViewController {
         let effectiveHeight = kTableHeaderHeight-kTableHeaderCutAway/2
         tableView.contentInset = UIEdgeInsets(top: effectiveHeight, left: 0, bottom: 0, right: 0)
         tableView.contentOffset = CGPoint(x: 0, y: -effectiveHeight)
+        
+        ingredientsView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,5 +79,45 @@ class EditRecipeTableViewController: UITableViewController {
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         updateHeaderView()
+    }
+    
+    // MARK: - UITextViewDelegate
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        // If the replacement text is "\n" and the
+        // text view is the one you want bullet points
+        // for
+        if (text == "\n") {
+            // If the replacement text is being added to the end of the
+            // text view, i.e. the new index is the length of the old
+            // text view's text...
+            
+            
+            if range.location == textView.text.characters.count {
+                // Simply add the newline and bullet point to the end
+                let updatedText: String = textView.text!.stringByAppendingString("\n\u{2022} ")
+                textView.text = updatedText
+            }
+            else {
+                
+                // Get the replacement range of the UITextView
+                let beginning: UITextPosition = textView.beginningOfDocument
+                let start: UITextPosition = textView.positionFromPosition(beginning, offset: range.location)!
+                let end: UITextPosition = textView.positionFromPosition(start, offset: range.length)!
+                let textRange: UITextRange = textView.textRangeFromPosition(start, toPosition: end)!
+                // Insert that newline character *and* a bullet point
+                // at the point at which the user inputted just the
+                // newline character
+                textView.replaceRange(textRange, withText: "\n\u{2022} ")
+                // Update the cursor position accordingly
+                let cursor: NSRange = NSMakeRange(range.location + "\n\u{2022} ".length, 0)
+                textView.selectedRange = cursor
+            }
+            
+            return false
+            
+            
+        }
+        // Else return yes
+        return true
     }
 }
