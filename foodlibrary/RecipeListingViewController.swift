@@ -69,12 +69,17 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: Actions
     
     func addTapped() {
-        let editRecipeViewController:EditRecipeViewController = EditRecipeViewController()
-        editRecipeViewController.category = self.category
+//        let editRecipeViewController:EditRecipeViewController = EditRecipeViewController()
+//        editRecipeViewController.category = self.category
         
-        let nav:UINavigationController = UINavigationController.init(rootViewController: editRecipeViewController)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("EditRecipeViewController") as! EditRecipeViewController
+        
+        let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
         
         self.navigationController?.presentViewController(nav, animated: true, completion: nil)
+        
+        
     }
     
     // MARK: MagicalRecord Methods

@@ -10,18 +10,33 @@ import UIKit
 
 class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
 
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var ingredientsView: UITextView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var cookTimeTextField: UITextField!
+    @IBOutlet weak var prepTimeTextField: UITextField!
+    @IBOutlet weak var difficultyTextField: UITextField!
+    @IBOutlet weak var ingredientsTextView: UITextView!
+    @IBOutlet weak var instructionsTextView: UITextView!
+    
+    @IBOutlet weak var cookTimePicker: ExpandablePickerView!
+    @IBOutlet weak var prepTimePicker: ExpandablePickerView!
     
     var headerView: ParallaxHeaderView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ingredientsView.delegate = self
+        self.ingredientsTextView.delegate = self
         
         headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "bg-header"), forSize: CGSizeMake(tableView.frame.size.width, 300)) as! ParallaxHeaderView
         tableView.tableHeaderView = headerView
+        
+        self.cookTimePicker.translatesAutoresizingMaskIntoConstraints = false
+        self.cookTimePicker.visible = false
+        self.cookTimePicker.hidden = true
+        
+        self.prepTimePicker.translatesAutoresizingMaskIntoConstraints = false
+        self.prepTimePicker.visible = false
+        self.prepTimePicker.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +52,59 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
     }
     
     // MARK: - UITextViewDelegate
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if (indexPath.section == 0 && indexPath.row == 2) {
+            if (self.cookTimePicker.visible == true) {
+                 return 216.0
+            }
+            else {
+                 return 0.0
+            }
+        }
+        else if (indexPath.section == 0 && indexPath.row == 4) {
+            if (self.prepTimePicker.visible == true) {
+                return 216.0
+            }
+            else {
+                return 0.0
+            }
+        }
+        
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.section == 0 && indexPath.row == 1) {
+            if (self.cookTimePicker.visible == true) {
+                self.cookTimePicker.hidePicker()
+            }
+            else {
+                self.cookTimePicker.showPicker()
+                self.view.endEditing(true)
+            }
+            
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
+        else if (indexPath.section == 0 && indexPath.row == 3) {
+            if (self.prepTimePicker.visible == true) {
+                self.prepTimePicker.hidePicker()
+            }
+            else {
+                self.prepTimePicker.showPicker()
+                self.view.endEditing(true)
+            }
+            
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
+    }
+    
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         // If the replacement text is "\n" and the
         // text view is the one you want bullet points
