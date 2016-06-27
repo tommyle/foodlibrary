@@ -17,6 +17,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addTapped))
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -27,6 +29,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.createCategories()
             self.fetchAllCategories()
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.fetchAllCategories()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,5 +87,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         recipeListingViewController.category = categories[indexPath.row]
         
         self.navigationController?.pushViewController(recipeListingViewController, animated: true)
+    }
+    
+    // MARK: Actions
+    
+    func addTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("AddCategoryTableViewController") as! AddCategoryTableViewController
+        
+        let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+        
+        self.navigationController?.presentViewController(nav, animated: true, completion: nil)
     }
 }

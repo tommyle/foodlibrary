@@ -24,6 +24,8 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
         self.tableView.dataSource = self
         self.tableView.registerNib(UINib(nibName: "RecipeListingTableViewCell", bundle: nil), forCellReuseIdentifier: "RecipeListingTableViewCell")
         
+        self.tableView.allowsMultipleSelectionDuringEditing = false
+        
         self.fetchAllRecipes()
     }
     
@@ -60,10 +62,28 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let recipe: Recipe! = self.recipes[indexPath.row]
-        let recipeViewController: RecipeViewController = RecipeViewController()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let recipeViewController = storyboard.instantiateViewControllerWithIdentifier("RecipeViewController") as! RecipeViewController
         recipeViewController.recipe = recipe
         
         self.navigationController?.pushViewController(recipeViewController, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            let recipe:Recipe = recipes[indexPath.row]
+            recipe.deleteEntity()
+            
+            NSManagedObjectContext.defaultContext().saveToPersistentStoreAndWait()
+            
+            self.recipes.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
     }
     
     // MARK: Actions
@@ -78,8 +98,6 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
         let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
         
         self.navigationController?.presentViewController(nav, animated: true, completion: nil)
-        
-        
     }
     
     // MARK: MagicalRecord Methods

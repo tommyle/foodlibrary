@@ -20,6 +20,7 @@ class EditRecipeViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(saveTapped))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: #selector(cancelTapped))
 
         // Do any additional setup after loading the view.
     }
@@ -35,6 +36,8 @@ class EditRecipeViewController: UIViewController {
         }
     }
     
+    // MARK: Helper Functions
+    
     // MARK: Actions
     
     func saveTapped() {
@@ -44,13 +47,19 @@ class EditRecipeViewController: UIViewController {
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func cancelTapped() {
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: MagicalRecord
     
     func createRecipe() {
         self.recipe = Recipe.createEntity() as! Recipe
         self.recipe.name = vc.nameTextField.text
-        self.recipe.cookTime = 90
-        self.recipe.prepTime = 10
+        
+        self.recipe.cookTime = vc.cookTimePicker.date
+        self.recipe.prepTime = vc.prepTimePicker.date
+        
         self.recipe.difficulty = 5
         
         let ingredients: NSMutableOrderedSet! = recipe.mutableOrderedSetValueForKey("ingredients")

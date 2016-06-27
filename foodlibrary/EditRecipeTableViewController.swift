@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
+class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cookTimeTextField: UITextField!
@@ -26,9 +26,17 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         self.ingredientsTextView.delegate = self
+        self.instructionsTextView.delegate = self
         
-        headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "bg-header"), forSize: CGSizeMake(tableView.frame.size.width, 300)) as! ParallaxHeaderView
-        tableView.tableHeaderView = headerView
+        self.nameTextField.delegate = self
+        self.difficultyTextField.delegate = self
+        
+        headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "ImagePlaceHolder"), forSize: CGSizeMake(self.tableView.frame.size.width, 200)) as! ParallaxHeaderView
+        self.tableView.tableHeaderView = headerView
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(_:)))
+        headerView.addGestureRecognizer(tapGesture)
+        headerView.userInteractionEnabled = true
         
         self.cookTimePicker.translatesAutoresizingMaskIntoConstraints = false
         self.cookTimePicker.visible = false
@@ -37,11 +45,36 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
         self.prepTimePicker.translatesAutoresizingMaskIntoConstraints = false
         self.prepTimePicker.visible = false
         self.prepTimePicker.hidden = true
+        
+        self.cookTimePicker.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        self.prepTimePicker.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
+        let dateString = "00:00"
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let dateObj = dateFormatter.dateFromString(dateString)
+        
+        self.cookTimePicker.setDate(dateObj!, animated: true)
+        self.prepTimePicker.setDate(dateObj!, animated: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Helper Methods
+    func hidePickerViews() {
+        if (self.prepTimePicker.visible == true) {
+            self.prepTimePicker.hidePicker()
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
+        else if (self.cookTimePicker.visible == true) {
+            self.cookTimePicker.hidePicker()
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
     }
     
     // MARK: - UIScrollViewDelegate
@@ -51,8 +84,16 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
         tableView.tableHeaderView = headerView
     }
     
-    // MARK: - UITextViewDelegate
+    // MARK - UITextFieldDelegate
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.hidePickerViews()
+    }
     
+    // MARK: - UITextViewDelegate
+    func textViewDidBeginEditing(textView: UITextView) {
+        self.hidePickerViews()
+    }
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if (indexPath.section == 0 && indexPath.row == 2) {
             if (self.cookTimePicker.visible == true) {
@@ -70,6 +111,9 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
                 return 0.0
             }
         }
+        else if (indexPath.section > 0) {
+            return 160.0
+        }
         
         return UITableViewAutomaticDimension
     }
@@ -85,6 +129,7 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
             }
             else {
                 self.cookTimePicker.showPicker()
+                self.prepTimePicker.hidePicker()
                 self.view.endEditing(true)
             }
             
@@ -97,11 +142,31 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
             }
             else {
                 self.prepTimePicker.showPicker()
+                self.cookTimePicker.hidePicker()
                 self.view.endEditing(true)
             }
             
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
+        }
+        else {
+            //If any other cell is tapped then hide the picker views
+            self.cookTimePicker.hidePicker()
+            self.prepTimePicker.hidePicker()
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
+    }
+    
+    func datePickerValueChanged(sender: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        if (sender.isEqual(cookTimePicker)) {
+            self.cookTimeTextField.text = dateFormatter.stringFromDate(cookTimePicker.date)
+        }
+        else {
+            self.prepTimeTextField.text = dateFormatter.stringFromDate(prepTimePicker.date)
         }
     }
     
@@ -109,6 +174,7 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
         // If the replacement text is "\n" and the
         // text view is the one you want bullet points
         // for
+        
         if (text == "\n") {
             // If the replacement text is being added to the end of the
             // text view, i.e. the new index is the length of the old
@@ -142,5 +208,9 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate {
         }
         // Else return yes
         return true
+    }
+    
+    func imageTapped(gesture: UIGestureRecognizer) {
+        print("image tapped")
     }
 }

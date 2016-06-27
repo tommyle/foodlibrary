@@ -2,7 +2,7 @@
 //  Recipe+CoreDataProperties.swift
 //  
 //
-//  Created by Tommy Le on 2016-06-19.
+//  Created by Tommy Le on 2016-06-26.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,11 +14,11 @@ import CoreData
 
 extension Recipe {
 
-    @NSManaged var cookTime: NSNumber?
+    @NSManaged var cookTime: NSDate?
     @NSManaged var difficulty: NSNumber?
     @NSManaged var imagePath: String?
     @NSManaged var name: String?
-    @NSManaged var prepTime: NSNumber?
+    @NSManaged var prepTime: NSDate?
     @NSManaged var servings: NSNumber?
     @NSManaged var category: Category?
     @NSManaged var ingredients: NSOrderedSet?

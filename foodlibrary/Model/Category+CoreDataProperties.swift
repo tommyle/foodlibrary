@@ -2,7 +2,7 @@
 //  Category+CoreDataProperties.swift
 //  
 //
-//  Created by Tommy Le on 2016-06-19.
+//  Created by Tommy Le on 2016-06-26.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
