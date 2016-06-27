@@ -13,5 +13,6 @@
 #import "CoreData+MagicalRecord.h"
 
 #import "ParallaxHeaderView.h"
+#import "MXParallaxHeader.h"
 
 #endif /* FoodLibrary_Bridging_Header_h */

@@ -17,8 +17,8 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addTapped))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(addTapped))
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -94,6 +94,7 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("EditRecipeViewController") as! EditRecipeViewController
+        vc.category = category
         
         let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
         
@@ -102,6 +103,13 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: MagicalRecord Methods
     func fetchAllRecipes() {
-        recipes = Recipe.findAllSortedBy("name", ascending: true) as! [Recipe]
+        if (category.name == "All") {
+            recipes = Recipe.findAllSortedBy("name", ascending: true) as! [Recipe]
+        }
+        else {
+            let predicate = NSPredicate(format: "category.name = %@", category.name!)
+            recipes = Recipe.findAllSortedBy("name", ascending: true, withPredicate: predicate) as! [Recipe]
+        }
+
     }
 }

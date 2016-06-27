@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="44" y="-444"/>
         </scene>
-        <!--Title-->
+        <!--Categories-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="foodlibrary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="CategoryListingViewController" customModule="foodlibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -49,15 +49,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JcX-4f-NNS">
-                                <rect key="frame" x="20" y="64" width="560" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="67" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JcX-4f-NNS">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="67" id="3t8-hI-nXr">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="67"/>
+                                        <rect key="frame" x="0.0" y="50" width="600" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3t8-hI-nXr" id="fhU-92-uW7">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -69,15 +69,15 @@
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="JcX-4f-NNS" secondAttribute="bottom" id="AGY-Mw-TDv"/>
                             <constraint firstItem="JcX-4f-NNS" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="FcV-LF-B3I"/>
-                            <constraint firstItem="JcX-4f-NNS" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="VGr-iU-Nod"/>
+                            <constraint firstItem="JcX-4f-NNS" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" constant="20" id="VGr-iU-Nod"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                            <constraint firstItem="JcX-4f-NNS" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="hxO-WX-Aal"/>
+                            <constraint firstItem="JcX-4f-NNS" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="hxO-WX-Aal"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="acW-dT-cKf"/>
-                    <navigationItem key="navigationItem" title="Title" id="HnW-Uw-q9q"/>
+                    <navigationItem key="navigationItem" title="Categories" id="HnW-Uw-q9q"/>
                     <connections>
                         <outlet property="tableView" destination="JcX-4f-NNS" id="c2i-Ht-K2W"/>
                     </connections>
@@ -91,7 +91,7 @@
             <objects>
                 <tableViewController id="Ps0-pb-Yb9" customClass="EditRecipeTableViewController" customModule="foodlibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="4oy-9D-3Nk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -409,8 +409,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K0K-af-P7F">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0K-af-P7F">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <connections>
                                     <segue destination="Ps0-pb-Yb9" kind="embed" identifier="tableViewSegue" id="DEP-J4-c24"/>
                                 </connections>

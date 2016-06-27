@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '453DB9E09F755F21FCD5405D'
-               BlueprintName = 'Pods-foodlibrary'
+               BlueprintIdentifier = '7605E8AD2AF30B2EC2048F1D'
+               BlueprintName = 'MXParallaxHeader'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-foodlibrary.a'>
+               BuildableName = 'libMXParallaxHeader.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

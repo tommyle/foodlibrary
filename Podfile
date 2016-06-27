@@ -5,5 +5,6 @@
 
 target 'foodlibrary' do
     pod 'MagicalRecord/Shorthand'
+    pod 'MXParallaxHeader','= 0.5.0'
 end
 

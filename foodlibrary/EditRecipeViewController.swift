@@ -55,6 +55,7 @@ class EditRecipeViewController: UIViewController {
     
     func createRecipe() {
         self.recipe = Recipe.createEntity() as! Recipe
+        self.recipe.category = category
         self.recipe.name = vc.nameTextField.text
         
         self.recipe.cookTime = vc.cookTimePicker.date

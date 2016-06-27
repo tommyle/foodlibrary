@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  CategoryListingViewController.swift
 //  foodlibrary
 //
 //  Created by Tommy Le on 2016-06-18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CategoryListingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,6 +16,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.allowsMultipleSelectionDuringEditing = false
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addTapped))
         
@@ -87,6 +89,29 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         recipeListingViewController.category = categories[indexPath.row]
         
         self.navigationController?.pushViewController(recipeListingViewController, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        let category:Category = categories[indexPath.row]
+        
+        if (category.name == "All") {
+            return false
+        }
+        else {
+            return true
+        }
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            let category:Category = categories[indexPath.row]
+            category.deleteEntity()
+            
+            NSManagedObjectContext.defaultContext().saveToPersistentStoreAndWait()
+            
+            self.categories.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
     }
     
     // MARK: Actions
