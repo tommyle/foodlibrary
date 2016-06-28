@@ -91,7 +91,7 @@
             <objects>
                 <tableViewController id="Ps0-pb-Yb9" customClass="EditRecipeTableViewController" customModule="foodlibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="4oy-9D-3Nk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -383,56 +383,48 @@
         <!--Item-->
         <scene sceneID="qyr-Yi-OwK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQW-Hl-ewi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="bGc-LG-6oo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="aGY-Pw-6k0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DiP-8V-IOV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="PHE-Sg-awr" kind="relationship" relationship="rootViewController" id="huO-4j-Dn7"/>
-                    </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gQW-Hl-ewi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44" y="362"/>
         </scene>
         <!--Edit Recipe View Controller-->
-        <scene sceneID="XUH-T7-hwQ">
+        <scene sceneID="cHa-8O-DGb">
             <objects>
-                <viewController storyboardIdentifier="EditRecipeViewController" id="PHE-Sg-awr" customClass="EditRecipeViewController" customModule="foodlibrary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditRecipeViewController" id="0mb-ch-w0e" customClass="EditRecipeViewController" customModule="foodlibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dtG-8T-Spl"/>
-                        <viewControllerLayoutGuide type="bottom" id="lLq-NS-eRw"/>
+                        <viewControllerLayoutGuide type="top" id="JDV-Az-BfB"/>
+                        <viewControllerLayoutGuide type="bottom" id="q3W-qv-w1c"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4ho-AI-ftX">
+                    <view key="view" contentMode="scaleToFill" id="5nY-HO-pJ4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0K-af-P7F">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9o5-MZ-akl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
-                                    <segue destination="Ps0-pb-Yb9" kind="embed" identifier="tableViewSegue" id="DEP-J4-c24"/>
+                                    <segue destination="Ps0-pb-Yb9" kind="embed" id="piU-Iy-7q6"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="K0K-af-P7F" firstAttribute="top" secondItem="dtG-8T-Spl" secondAttribute="bottom" id="7kR-Qo-AlX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K0K-af-P7F" secondAttribute="trailing" constant="-20" id="cgI-7z-xF8"/>
-                            <constraint firstItem="lLq-NS-eRw" firstAttribute="top" secondItem="K0K-af-P7F" secondAttribute="bottom" id="f3g-N8-hkz"/>
-                            <constraint firstItem="K0K-af-P7F" firstAttribute="leading" secondItem="4ho-AI-ftX" secondAttribute="leadingMargin" constant="-20" id="mHe-wn-Fou"/>
+                            <constraint firstItem="9o5-MZ-akl" firstAttribute="top" secondItem="5nY-HO-pJ4" secondAttribute="topMargin" id="Wp3-wP-ju2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9o5-MZ-akl" secondAttribute="trailing" constant="-20" id="Z5E-sE-iCH"/>
+                            <constraint firstItem="q3W-qv-w1c" firstAttribute="top" secondItem="9o5-MZ-akl" secondAttribute="bottom" id="e77-zn-UT4"/>
+                            <constraint firstItem="9o5-MZ-akl" firstAttribute="leading" secondItem="5nY-HO-pJ4" secondAttribute="leadingMargin" constant="-20" id="eBU-y8-NdX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="Qii-gu-sOx"/>
-                    <navigationItem key="navigationItem" id="zF9-KQ-bHh"/>
-                    <connections>
-                        <outlet property="containerView" destination="K0K-af-P7F" id="6wH-1P-lso"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Wp-rb-73r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8q-4r-nHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="362"/>
+            <point key="canvasLocation" x="812" y="350"/>
         </scene>
         <!--Add Category Table View Controller-->
         <scene sceneID="d0i-2v-Fzs">
