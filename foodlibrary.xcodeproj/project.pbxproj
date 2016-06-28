@@ -29,6 +29,8 @@
 		7285B4B91D20688C00EF3101 /* AddCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285B4B81D20688C00EF3101 /* AddCategoryTableViewController.swift */; };
 		7285B4CE1D21F0EC00EF3101 /* ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285B4CD1D21F0EC00EF3101 /* ParallaxHeader.swift */; };
 		7285B4D01D21F0F400EF3101 /* ParallaxHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7285B4CF1D21F0F400EF3101 /* ParallaxHeader.xib */; };
+		7285B4D21D221C9500EF3101 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285B4D11D221C9500EF3101 /* ImageSaver.swift */; };
+		7285B4D41D221DB300EF3101 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285B4D31D221DB300EF3101 /* Functions.swift */; };
 		72AAAD631D1718B0005FBEF2 /* RecipeListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */; };
 		72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */; };
 		72B11CB31D1EC2C800D4737F /* ExpandablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B11CB21D1EC2C800D4737F /* ExpandablePickerView.swift */; };
@@ -63,6 +65,8 @@
 		7285B4B81D20688C00EF3101 /* AddCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCategoryTableViewController.swift; sourceTree = "<group>"; };
 		7285B4CD1D21F0EC00EF3101 /* ParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeader.swift; sourceTree = "<group>"; };
 		7285B4CF1D21F0F400EF3101 /* ParallaxHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParallaxHeader.xib; sourceTree = "<group>"; };
+		7285B4D11D221C9500EF3101 /* ImageSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		7285B4D31D221DB300EF3101 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListingTableViewCell.swift; sourceTree = "<group>"; };
 		72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListingTableViewCell.xib; sourceTree = "<group>"; };
 		72B11CB21D1EC2C800D4737F /* ExpandablePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandablePickerView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		721519521D19A0FF00CFF554 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				7285B4D11D221C9500EF3101 /* ImageSaver.swift */,
+				7285B4D31D221DB300EF3101 /* Functions.swift */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -337,10 +343,12 @@
 				721FEE9C1D15BC4D007E6463 /* AppDelegate.swift in Sources */,
 				7285B4CE1D21F0EC00EF3101 /* ParallaxHeader.swift in Sources */,
 				7285B4AC1D20422600EF3101 /* Category+CoreDataProperties.swift in Sources */,
+				7285B4D21D221C9500EF3101 /* ImageSaver.swift in Sources */,
 				721FEE9E1D15BC4D007E6463 /* CategoryListingViewController.swift in Sources */,
 				7285B4AD1D20422600EF3101 /* Category.swift in Sources */,
 				7285B4AE1D20422600EF3101 /* Instruction+CoreDataProperties.swift in Sources */,
 				7285B4B21D20422600EF3101 /* Ingredient+CoreDataProperties.swift in Sources */,
+				7285B4D41D221DB300EF3101 /* Functions.swift in Sources */,
 				721FEEB21D15BE39007E6463 /* Model.xcdatamodeld in Sources */,
 				721A382D1D1F6BEB00FA2E8D /* RecipeTableViewController.swift in Sources */,
 				7285B4B11D20422600EF3101 /* Recipe.swift in Sources */,

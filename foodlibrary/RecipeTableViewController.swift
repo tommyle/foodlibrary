@@ -25,10 +25,10 @@ class RecipeTableViewController: UITableViewController {
         
         // Parallax Header
         let headerView = ParallaxHeader.instanciateFromNib()
-        headerView.backgroundImage.image = UIImage(named: "ImagePlaceHolder")
+        headerView.backgroundImage.image = UIImage(contentsOfFile: self.recipe.imagePath!)
         
         self.tableView.parallaxHeader.view = headerView
-        self.tableView.parallaxHeader.height = 300
+        self.tableView.parallaxHeader.height = 250
         self.tableView.parallaxHeader.mode = MXParallaxHeaderMode.Fill
         self.tableView.parallaxHeader.minimumHeight = 0
         

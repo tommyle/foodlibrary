@@ -20,6 +20,10 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
     @IBOutlet weak var cookTimePicker: ExpandablePickerView!
     @IBOutlet weak var prepTimePicker: ExpandablePickerView!
     
+    var recipe: Recipe = Recipe.createEntity() as! Recipe
+    var image: UIImage!
+    var headerView: ParallaxHeader!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,11 +34,11 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
         self.difficultyTextField.delegate = self
         
         // Parallax Header
-        let headerView = ParallaxHeader.instanciateFromNib()
-        headerView.backgroundImage.image = UIImage(named: "ImagePlaceHolder")
+        self.headerView = ParallaxHeader.instanciateFromNib()
+        self.headerView.backgroundImage.image = UIImage(named: "ImagePlaceHolder")
         
-        self.tableView.parallaxHeader.view = headerView
-        self.tableView.parallaxHeader.height = 300
+        self.tableView.parallaxHeader.view = self.headerView
+        self.tableView.parallaxHeader.height = 250
         self.tableView.parallaxHeader.mode = MXParallaxHeaderMode.Fill
         self.tableView.parallaxHeader.minimumHeight = 0
 
@@ -208,6 +212,124 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
     }
     
     func imageTapped(gesture: UIGestureRecognizer) {
-        print("image tapped")
+        self.pickPhoto()
     }
+}
+
+
+// MARK: - Image Picker Controller Delegate
+
+extension EditRecipeTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // Called when the user has selected a photo in the image picker.
+        
+        // "[NSObject : AnyObject]" indicates that input parameter, info, is a dictionary with keys of type NSObject and values of type AnyObject.
+        
+        // Use the UIImagePickerControllerEditedImage key to retrieve a UIImage object that contains the image after the Move and Scale operations on the original image.
+        self.image = info[UIImagePickerControllerEditedImage] as! UIImage?
+        
+        if (recipe.imagePath != nil) {
+            if let imageToDelete = recipe.imagePath {
+                ImageSaver.deleteImageAtPath(imageToDelete)
+            }
+        }
+        
+        if ImageSaver.saveImageToDisk(image!, andToRecipe: self.recipe) {
+            showImage(image!)
+        }
+
+        tableView.reloadData()
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    //#####################################################################
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    //#####################################################################
+    
+    func pickPhoto() {
+        
+        if true || UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            // Adding "true ||" introduces into the iOS Simulator fake availability of the camera.
+            
+            // The user's device has a camera.
+            showPhotoMenu()
+            
+        } else {
+            // The user's device does not have a camera.
+            choosePhotoFromLibrary()
+        }
+    }
+    //#####################################################################
+    
+    func showPhotoMenu() {
+        // Show an alert controller with an action sheet that slides in from the bottom of the screen.
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        // handler: is given a Closure that calls the appropriate method.
+        // The "_" wildcard is being used to ignore the parameter that is passed to this closure (which is a reference to the UIAlertAction itself).
+        
+        let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default, handler: { _ in self.takePhotoWithCamera() })
+        alertController.addAction(takePhotoAction)
+        
+        let chooseFromLibraryAction = UIAlertAction(title: "Choose From Library", style: .Default, handler: { _ in self.choosePhotoFromLibrary() })
+        alertController.addAction(chooseFromLibraryAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    //#####################################################################
+    
+    func takePhotoWithCamera() {
+        
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.sourceType = .Camera
+        
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        
+        //------------------------------------------
+        // Make the photo picker's tint color (background color) the same as the view's.
+        // This avoids having standard blue text on a dark gray navigation bar (assuming the view's tint color is set appropriately in the storyboard).
+        imagePicker.view.tintColor = view.tintColor
+        
+        //------------------------------------------
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    //#####################################################################
+    
+    func choosePhotoFromLibrary() {
+        
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.sourceType = .PhotoLibrary
+        
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        
+        //------------------------------------------
+        // Make the photo picker's tint color (background color) the same as the view's.
+        // This avoids having standard blue text on a dark gray navigation bar (assuming the view's tint color is set appropriately in the storyboard).
+        imagePicker.view.tintColor = view.tintColor
+        
+        //------------------------------------------
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    //#####################################################################
+    
+    func showImage(image: UIImage) {
+        
+        // Put the image into the image view.
+//        imageView.image = image
+        self.headerView.backgroundImage.image = image
+    }
+    //#####################################################################
 }

@@ -12,7 +12,6 @@ class EditRecipeViewController: UIViewController {
 
     var vc:EditRecipeTableViewController!
     var category: Category!
-    var recipe: Recipe!
     
     @IBOutlet weak var containerView: UIView!
     
@@ -54,16 +53,15 @@ class EditRecipeViewController: UIViewController {
     // MARK: MagicalRecord
     
     func createRecipe() {
-        self.recipe = Recipe.createEntity() as! Recipe
-        self.recipe.category = category
-        self.recipe.name = vc.nameTextField.text
+        vc.recipe.category = category
+        vc.recipe.name = vc.nameTextField.text
         
-        self.recipe.cookTime = vc.cookTimePicker.date
-        self.recipe.prepTime = vc.prepTimePicker.date
+        vc.recipe.cookTime = vc.cookTimePicker.date
+        vc.recipe.prepTime = vc.prepTimePicker.date
         
-        self.recipe.difficulty = 5
+        vc.recipe.difficulty = 5
         
-        let ingredients: NSMutableOrderedSet! = recipe.mutableOrderedSetValueForKey("ingredients")
+        let ingredients: NSMutableOrderedSet! = vc.recipe.mutableOrderedSetValueForKey("ingredients")
         
         let ingredientsArray = vc.ingredientsTextView.text.characters.split{$0 == "\n"}.map(String.init)
         
@@ -74,9 +72,9 @@ class EditRecipeViewController: UIViewController {
             ingredients.addObject(ingredient)
         }
         
-        recipe.ingredients = ingredients
+        vc.recipe.ingredients = ingredients
 
-        let instructions: NSMutableOrderedSet! = recipe.mutableOrderedSetValueForKey("instructions")
+        let instructions: NSMutableOrderedSet! = vc.recipe.mutableOrderedSetValueForKey("instructions")
         
         let instructionsArray = vc.instructionsTextView.text.characters.split{$0 == "\n"}.map(String.init)
         
@@ -88,7 +86,7 @@ class EditRecipeViewController: UIViewController {
             instructions.addObject(instruction)
         }
         
-        recipe.instructions = instructions
+        vc.recipe.instructions = instructions
     }
     
     func saveContext() {
