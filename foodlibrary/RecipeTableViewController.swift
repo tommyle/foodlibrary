@@ -23,16 +23,14 @@ class RecipeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        self.tableView.parallaxHeader.view = NSBundle.mainBundle().loadNibNamed("RocketHeader", owner: self, options: nil).first as? UIView
+        // Parallax Header
+        let headerView = ParallaxHeader.instanciateFromNib()
+        headerView.backgroundImage.image = UIImage(named: "ImagePlaceHolder")
+        
+        self.tableView.parallaxHeader.view = headerView
         self.tableView.parallaxHeader.height = 300
         self.tableView.parallaxHeader.mode = MXParallaxHeaderMode.Fill
-        self.tableView.parallaxHeader.minimumHeight = 20
-        
-        
-        
-//        self.headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "bg-header"), forSize: CGSizeMake(self.tableView.frame.size.width, 200)) as! ParallaxHeaderView
-//        self.tableView.tableHeaderView = self.headerView
+        self.tableView.parallaxHeader.minimumHeight = 0
         
         self.nameTextField.text = recipe.name
         

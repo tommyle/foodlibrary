@@ -20,8 +20,6 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
     @IBOutlet weak var cookTimePicker: ExpandablePickerView!
     @IBOutlet weak var prepTimePicker: ExpandablePickerView!
     
-    var headerView: ParallaxHeaderView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,9 +29,15 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
         self.nameTextField.delegate = self
         self.difficultyTextField.delegate = self
         
-        headerView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "ImagePlaceHolder"), forSize: CGSizeMake(self.tableView.frame.size.width, 200)) as! ParallaxHeaderView
-        self.tableView.tableHeaderView = headerView
+        // Parallax Header
+        let headerView = ParallaxHeader.instanciateFromNib()
+        headerView.backgroundImage.image = UIImage(named: "ImagePlaceHolder")
         
+        self.tableView.parallaxHeader.view = headerView
+        self.tableView.parallaxHeader.height = 300
+        self.tableView.parallaxHeader.mode = MXParallaxHeaderMode.Fill
+        self.tableView.parallaxHeader.minimumHeight = 0
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(_:)))
         headerView.addGestureRecognizer(tapGesture)
         headerView.userInteractionEnabled = true
@@ -75,13 +79,6 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
         }
-    }
-    
-    // MARK: - UIScrollViewDelegate
-    
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        headerView.layoutHeaderViewForScrollViewOffset(scrollView.contentOffset)
-        tableView.tableHeaderView = headerView
     }
     
     // MARK - UITextFieldDelegate
