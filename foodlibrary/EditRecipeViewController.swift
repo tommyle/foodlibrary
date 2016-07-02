@@ -55,11 +55,8 @@ class EditRecipeViewController: UIViewController {
     func createRecipe() {
         vc.recipe.category = category
         vc.recipe.name = vc.nameTextField.text
-        
         vc.recipe.cookTime = vc.cookTimePicker.date
         vc.recipe.prepTime = vc.prepTimePicker.date
-        
-        vc.recipe.difficulty = 5
         
         let ingredients: NSMutableOrderedSet! = vc.recipe.mutableOrderedSetValueForKey("ingredients")
         

@@ -13,7 +13,6 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cookTimeTextField: UITextField!
     @IBOutlet weak var prepTimeTextField: UITextField!
-    @IBOutlet weak var difficultyTextField: UITextField!
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var instructionsTextView: UITextView!
     
@@ -31,7 +30,6 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
         self.instructionsTextView.delegate = self
         
         self.nameTextField.delegate = self
-        self.difficultyTextField.delegate = self
         
         // Parallax Header
         self.headerView = ParallaxHeader.instanciateFromNib()
@@ -175,6 +173,32 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
         // If the replacement text is "\n" and the
         // text view is the one you want bullet points
         // for
+        
+        //if this is the first character, add a bullet point
+        if (textView.text == "") {
+            textView.text = "\u{2022} "
+            
+            return true
+        }
+        
+        //if backspace was presesed
+        if (text == "") {
+            
+            //easy case where the cursor is at the end of the string
+            if range.location == textView.text.characters.count - 1 {
+                let str = textView.text
+                let substring = str.substringWithRange(str.endIndex.advancedBy(-3)..<str.endIndex)
+                
+                //if the last occurance of the bullet was at the end then delete the bullet
+                if (substring == "\n\u{2022} ") {
+                    textView.text = str.substringWithRange(str.startIndex..<str.endIndex.advancedBy(-3))
+                    return false
+                }
+            }
+            else {
+                //Hard case where the user deletes a bullet in the middle of the list
+            }
+        }
         
         if (text == "\n") {
             // If the replacement text is being added to the end of the

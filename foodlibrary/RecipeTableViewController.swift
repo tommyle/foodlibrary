@@ -14,7 +14,6 @@ class RecipeTableViewController: UITableViewController {
     var recipe: Recipe!
 
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var difficultyTextField: UITextField!
     @IBOutlet weak var prepTimeTextField: UITextField!
     @IBOutlet weak var cookTimeTextField: UITextField!
     @IBOutlet weak var ingredientsTextView: UITextView!
@@ -32,12 +31,12 @@ class RecipeTableViewController: UITableViewController {
         self.tableView.parallaxHeader.mode = MXParallaxHeaderMode.Fill
         self.tableView.parallaxHeader.minimumHeight = 0
         
+        self.tableView.backgroundColor = UIColor.clearColor()
+        
         self.nameTextField.text = recipe.name
         
         self.cookTimeTextField.text = self.dateToString(self.recipe.cookTime!)
         self.prepTimeTextField.text = self.dateToString(self.recipe.prepTime!)
-        
-        self.difficultyTextField.text = recipe.difficulty?.stringValue
         
         var ingredientsString:String = ""
         for i in recipe.ingredients! {

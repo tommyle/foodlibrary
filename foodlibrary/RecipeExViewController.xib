@@ -5,9 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecipeListingViewController" customModule="foodlibrary" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecipeExViewController" customModule="foodlibrary" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="iwb-v7-ENk" id="vlF-9M-qQe"/>
+                <outlet property="tableView" destination="uqR-Ve-cOS" id="ing-Xt-eS6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,17 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="iwb-v7-ENk">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="uqR-Ve-cOS">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="iwb-v7-ENk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="J8R-31-8xd"/>
-                <constraint firstItem="iwb-v7-ENk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SmZ-eG-UKd"/>
-                <constraint firstAttribute="bottom" secondItem="iwb-v7-ENk" secondAttribute="bottom" id="jHz-4a-6oH"/>
-                <constraint firstAttribute="trailing" secondItem="iwb-v7-ENk" secondAttribute="trailing" id="xTw-A3-C70"/>
+                <constraint firstAttribute="bottom" secondItem="uqR-Ve-cOS" secondAttribute="bottom" id="K2k-n3-V3g"/>
+                <constraint firstAttribute="trailing" secondItem="uqR-Ve-cOS" secondAttribute="trailing" id="MPm-0M-neq"/>
+                <constraint firstItem="uqR-Ve-cOS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xrf-Lv-CzR"/>
+                <constraint firstItem="uqR-Ve-cOS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y1M-Kl-fhF"/>
             </constraints>
         </view>
     </objects>

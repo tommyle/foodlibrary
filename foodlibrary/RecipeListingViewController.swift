@@ -63,11 +63,16 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let recipe: Recipe! = self.recipes[indexPath.row]
         
+        /*
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let recipeViewController = storyboard.instantiateViewControllerWithIdentifier("RecipeViewController") as! RecipeViewController
         recipeViewController.recipe = recipe
+         */
         
-        self.navigationController?.pushViewController(recipeViewController, animated: true)
+        let recipeExViewController = RecipeExViewController()
+        recipeExViewController.recipe = recipe
+ 
+        self.navigationController?.pushViewController(recipeExViewController, animated: true)
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
