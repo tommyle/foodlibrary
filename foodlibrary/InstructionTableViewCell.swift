@@ -12,7 +12,6 @@ class InstructionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var instructionTextView: UITextView!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,12 +33,7 @@ class InstructionTableViewCell: UITableViewCell {
         self.stepLabel.text = String(stepNumber)
         self.instructionTextView.text = instructionText.stringByReplacingOccurrencesOfString("\n", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         
-        self.setFrameToText()
-    }
-    
-    func setFrameToText() {
         self.instructionTextView.sizeToFit()
-        self.heightConstraint.constant = self.instructionTextView.frame.size.height
     }
     
 }
