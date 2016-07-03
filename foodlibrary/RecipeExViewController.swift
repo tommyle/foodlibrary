@@ -31,7 +31,9 @@ class RecipeExViewController: UIViewController, UITableViewDelegate, UITableView
         
         // Parallax Header
         let headerView = ParallaxHeader.instanciateFromNib()
-        headerView.backgroundImage.image = UIImage(named: "sushi")//UIImage(contentsOfFile: self.recipe.imagePath!)
+        let filePath = (applicationDocumentsDirectory as NSString).stringByAppendingPathComponent(self.recipe.imagePath!)
+        
+        headerView.backgroundImage.image = UIImage(contentsOfFile: filePath)
         
         self.tableView.parallaxHeader.view = headerView
         self.tableView.parallaxHeader.height = 250
@@ -79,6 +81,9 @@ class RecipeExViewController: UIViewController, UITableViewDelegate, UITableView
             let sectionHeaderView = SectionHeaderView.instanciateFromNib()
             sectionHeaderView.headerTitle.text = "INGREDIENTS"
             sectionHeaderView.sectionImage.image = UIImage(named: "Ingredients")
+            
+//            sectionHeaderView.sectionImage.image = sectionHeaderView.sectionImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+//            sectionHeaderView.sectionImage.tintColor = Helper.UIColorFromRGB(0x89D486)
             
             return sectionHeaderView
         default:

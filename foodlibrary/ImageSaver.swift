@@ -23,7 +23,7 @@ class ImageSaver {
     //------------------------------------------
     if imgData!.writeToFile(pathName, atomically: true) {
       
-      recipe.imagePath = pathName
+      recipe.imagePath = fileName
       
     } else {
       
