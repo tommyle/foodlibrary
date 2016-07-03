@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol EditRecipeViewControllerDelegate: class {
+    func didSaveRecipe(sender: EditRecipeViewController)
+}
+
 class EditRecipeViewController: UIViewController {
 
+    weak var delegate:EditRecipeViewControllerDelegate?
+    
     var vc:EditRecipeTableViewController!
     var category: Category!
+    var recipe: Recipe!
     
     @IBOutlet weak var containerView: UIView!
     
@@ -32,6 +39,7 @@ class EditRecipeViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "tableViewSegue") {
             vc = segue.destinationViewController as! EditRecipeTableViewController
+            vc.recipe = recipe
         }
     }
     
@@ -40,8 +48,9 @@ class EditRecipeViewController: UIViewController {
     // MARK: Actions
     
     func saveTapped() {
-        self.createRecipe()
+        self.saveRecipe()
         self.saveContext()
+        self.didSaveRecipe(self)
         
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -52,13 +61,17 @@ class EditRecipeViewController: UIViewController {
     
     // MARK: MagicalRecord
     
-    func createRecipe() {
-        vc.recipe.category = category
-        vc.recipe.name = vc.nameTextField.text
-        vc.recipe.cookTime = vc.cookTimePicker.date
-        vc.recipe.prepTime = vc.prepTimePicker.date
+    func saveRecipe() {
+        //Delete old instructions and ingredients if they exist
+        vc.recipe!.deleteAllIngredients()
+        vc.recipe!.deleteAllInstructions()
         
-        let ingredients: NSMutableOrderedSet! = vc.recipe.mutableOrderedSetValueForKey("ingredients")
+        vc.recipe!.category = category
+        vc.recipe!.name = vc.nameTextField.text
+        vc.recipe!.cookTime = vc.cookTimePicker.date
+        vc.recipe!.prepTime = vc.prepTimePicker.date
+        
+        let ingredients: NSMutableOrderedSet! = vc.recipe!.mutableOrderedSetValueForKey("ingredients")
         
         let ingredientsArray = vc.ingredientsTextView.text.characters.split{$0 == "\n"}.map(String.init)
         
@@ -69,9 +82,9 @@ class EditRecipeViewController: UIViewController {
             ingredients.addObject(ingredient)
         }
         
-        vc.recipe.ingredients = ingredients
+        vc.recipe!.ingredients = ingredients
 
-        let instructions: NSMutableOrderedSet! = vc.recipe.mutableOrderedSetValueForKey("instructions")
+        let instructions: NSMutableOrderedSet! = vc.recipe!.mutableOrderedSetValueForKey("instructions")
         
         let instructionsArray = vc.instructionsTextView.text.characters.split{$0 == "\n"}.map(String.init)
         
@@ -83,10 +96,16 @@ class EditRecipeViewController: UIViewController {
             instructions.addObject(instruction)
         }
         
-        vc.recipe.instructions = instructions
+        vc.recipe!.instructions = instructions
     }
     
     func saveContext() {
         NSManagedObjectContext.defaultContext().saveToPersistentStoreAndWait()
+    }
+}
+
+extension EditRecipeViewController: EditRecipeViewControllerDelegate {
+    func didSaveRecipe(sender: EditRecipeViewController) {
+        delegate?.didSaveRecipe(self)
     }
 }

@@ -39,4 +39,30 @@ class Helper: NSObject {
 
         return attributedString
     }
+    
+    static func minutesToString(totalMinutes:Int32)->String {
+        let hours:Int32 = totalMinutes / 60
+        let minutes:Int32 = totalMinutes - hours * 60
+        
+        if (hours <= 0) {
+            return "\(minutes) mins"
+        }
+        else {
+            return "\(hours) hrs \(minutes) mins"
+        }
+    }
+    
+    static func dateToString(date: NSDate) -> String {
+        let calendar = NSCalendar.currentCalendar()
+        let comp = calendar.components([.Hour, .Minute], fromDate: date)
+        let hour = comp.hour
+        let minute = comp.minute
+        
+        if (hour <= 0) {
+            return "\(minute) mins"
+        }
+        else {
+            return "\(hour) hrs \(minute) mins"
+        }
+    }
 }

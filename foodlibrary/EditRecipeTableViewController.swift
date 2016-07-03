@@ -19,7 +19,7 @@ class EditRecipeTableViewController: UITableViewController, UITextFieldDelegate 
     @IBOutlet weak var cookTimePicker: ExpandablePickerView!
     @IBOutlet weak var prepTimePicker: ExpandablePickerView!
     
-    var recipe: Recipe = Recipe.createEntity() as! Recipe
+    var recipe: Recipe?
     var image: UIImage!
     var headerView: ParallaxHeader!
     
@@ -62,6 +62,13 @@ class EditRecipeTableViewController: UITableViewController, UITextFieldDelegate 
         
         self.cookTimePicker.setDate(dateObj!, animated: true)
         self.prepTimePicker.setDate(dateObj!, animated: true)
+        
+        if (self.recipe != nil) {
+            self.editExistingRecipe()
+        }
+        else {
+            recipe = Recipe.createEntity() as? Recipe
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,6 +88,20 @@ class EditRecipeTableViewController: UITableViewController, UITextFieldDelegate 
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
         }
+    }
+    
+    func editExistingRecipe() {
+        let filePath = (applicationDocumentsDirectory as NSString).stringByAppendingPathComponent(self.recipe!.imagePath!)
+        headerView.backgroundImage.image = UIImage(contentsOfFile: filePath)
+        
+        self.nameTextField.text = recipe?.name
+        self.cookTimeTextField.text = Helper.dateToString((recipe?.cookTime)!)
+        self.prepTimeTextField.text = Helper.dateToString((recipe?.prepTime)!)
+        self.ingredientsTextView.text = recipe?.getIngredientsAsString()
+        self.instructionsTextView.text = recipe?.getInstructinsAsString()
+        
+        self.ingredientsTextView.sizeToFit()
+        self.instructionsTextView.sizeToFit()
     }
     
     // MARK - UITextFieldDelegate
@@ -253,13 +274,13 @@ extension EditRecipeTableViewController: UIImagePickerControllerDelegate, UINavi
         // Use the UIImagePickerControllerEditedImage key to retrieve a UIImage object that contains the image after the Move and Scale operations on the original image.
         self.image = info[UIImagePickerControllerEditedImage] as! UIImage?
         
-        if (recipe.imagePath != nil) {
-            if let imageToDelete = recipe.imagePath {
+        if (recipe!.imagePath != nil) {
+            if let imageToDelete = recipe!.imagePath {
                 ImageSaver.deleteImageAtPath(imageToDelete)
             }
         }
         
-        if ImageSaver.saveImageToDisk(image!, andToRecipe: self.recipe) {
+        if ImageSaver.saveImageToDisk(image!, andToRecipe: self.recipe!) {
             showImage(image!)
         }
 
