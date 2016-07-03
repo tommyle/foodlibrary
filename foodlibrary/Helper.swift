@@ -20,24 +20,25 @@ class Helper: NSObject {
     }
     
     static func StyleTime(prepTime: String, cookTime: String) -> NSAttributedString{
-        //Prep: 10 min Cook 2 min
-        let fullString: NSString = "Prep: \(prepTime)  Cook: \(cookTime)"
+        //        let regularAttributes = [NSForegroundColorAttributeName: UIColor.greenColor(), NSBackgroundColorAttributeName: UIColor.clearColor(), NSFontAttributeName: UIFont(name: "Oxygen-Bold", size: 18)!]
         
         let boldAttributes = [NSFontAttributeName: UIFont(name: "Oxygen-Bold", size: 18)!]
-        
         let regularAttributes = [NSFontAttributeName: UIFont(name: "Oxygen-Regular", size: 18)!]
         
-//        let regularAttributes = [NSForegroundColorAttributeName: UIColor.greenColor(), NSBackgroundColorAttributeName: UIColor.clearColor(), NSFontAttributeName: UIFont(name: "Oxygen-Bold", size: 18)!]
-
-        let attributedString = NSMutableAttributedString(string: fullString as String)
+        let prepTimeString: NSString = "Prep: \(prepTime)"
+        let cookTimeString: NSString = "  Cook: \(cookTime)"
         
-        attributedString.addAttributes(boldAttributes, range: (prepTime as NSString).rangeOfString("Prep:"))
-        attributedString.addAttributes(regularAttributes, range: (prepTime as NSString).rangeOfString(prepTime))
+        let prepTimeAttributedString = NSMutableAttributedString(string: prepTimeString as String)
+        prepTimeAttributedString.addAttributes(boldAttributes, range: prepTimeString.rangeOfString("Prep:"))
+        prepTimeAttributedString.addAttributes(regularAttributes, range: prepTimeString.rangeOfString(prepTime))
+        
+        let cookTimeAttributedString = NSMutableAttributedString(string: cookTimeString as String)
+        cookTimeAttributedString.addAttributes(boldAttributes, range: cookTimeString.rangeOfString("Cook:"))
+        cookTimeAttributedString.addAttributes(regularAttributes, range: cookTimeString.rangeOfString(cookTime))
+        
+        prepTimeAttributedString.appendAttributedString(cookTimeAttributedString)
 
-        attributedString.addAttributes(boldAttributes, range: (cookTime as NSString).rangeOfString("Cook:"))
-        attributedString.addAttributes(regularAttributes, range: (cookTime as NSString).rangeOfString(cookTime))
-
-        return attributedString
+        return prepTimeAttributedString
     }
     
     static func minutesToString(totalMinutes:Int32)->String {
