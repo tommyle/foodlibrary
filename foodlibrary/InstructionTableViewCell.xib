@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Oxygen-Regular.ttf">
+            <string>Oxygen-Regular</string>
+            <string>Oxygen-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="159" id="KGk-i7-Jjw" customClass="InstructionTableViewCell" customModule="foodlibrary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="158.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ve1-fM-D4S">
+                        <rect key="frame" x="70" y="8" width="222" height="142.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="142.5" id="4mI-EL-W8s"/>
+                        </constraints>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</string>
+                        <color key="textColor" red="0.26274509800000001" green="0.29411764709999999" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="Oxygen-Regular" family="Oxygen" pointSize="18"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gM-VN-bAj">
+                        <rect key="frame" x="28" y="8" width="34" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="5mg-1J-8m0"/>
+                            <constraint firstAttribute="width" secondItem="5gM-VN-bAj" secondAttribute="height" multiplier="1:1" id="77e-X1-zQn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Oxygen-Regular" family="Oxygen" pointSize="18"/>
+                        <color key="textColor" red="0.26274509800000001" green="0.29411764709999999" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5gM-VN-bAj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="3f2-te-N58"/>
+                    <constraint firstItem="ve1-fM-D4S" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="F75-p8-fxg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ve1-fM-D4S" secondAttribute="trailing" constant="20" id="ODn-5f-GWP"/>
+                    <constraint firstItem="ve1-fM-D4S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="SGc-a2-JrP"/>
+                    <constraint firstItem="ve1-fM-D4S" firstAttribute="leading" secondItem="5gM-VN-bAj" secondAttribute="trailing" constant="8" id="mXp-Pd-fqK"/>
+                    <constraint firstItem="5gM-VN-bAj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="xqq-tP-9cz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="heightConstraint" destination="4mI-EL-W8s" id="tGI-1z-VbH"/>
+                <outlet property="instructionTextView" destination="ve1-fM-D4S" id="iRM-Qc-sr4"/>
+                <outlet property="stepLabel" destination="5gM-VN-bAj" id="Bs3-xj-olb"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="211.5"/>
+        </tableViewCell>
+    </objects>
+</document>

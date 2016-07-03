@@ -11,6 +11,7 @@ import UIKit
 class SectionHeaderView: UIView {
 
     @IBOutlet weak var headerTitle: UILabel!
+    @IBOutlet weak var sectionImage: UIImageView!
     
     class func instanciateFromNib() -> SectionHeaderView {
         return NSBundle.mainBundle().loadNibNamed("SectionHeaderView", owner: nil, options: nil)[0] as! SectionHeaderView

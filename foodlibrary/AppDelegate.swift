@@ -17,8 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        MagicalRecord.setupCoreDataStackWithStoreNamed("Model")
+        self.window?.rootViewController?.navigationController?.toolbar.backgroundColor = UIColor.redColor()
+        self.window?.rootViewController?.navigationController?.toolbar.tintColor = UIColor.redColor()
         
+//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+        MagicalRecord.setupCoreDataStackWithStoreNamed("Model")
+                
         return true
     }
 

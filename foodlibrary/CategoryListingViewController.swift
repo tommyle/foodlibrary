@@ -17,6 +17,17 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController!.toolbar.backgroundColor = UIColor.redColor()
+        self.navigationController!.toolbar.tintColor = UIColor.redColor()
+        //        self.navigationController!.toolbar.barStyle = UIBarStyleBlack
+        
+//        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Oxygen-Regular", size: 18)!]
+        self.navigationController!.navigationBar.backgroundColor = UIColor.whiteColor()
+        self.navigationController!.navigationBar.tintColor = Helper.UIColorFromRGB(0x9274ED)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.translucent = false;
+        
         self.tableView.allowsMultipleSelectionDuringEditing = false
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(addTapped))

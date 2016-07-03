@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, UITextFieldDelegate {
+class EditRecipeTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cookTimeTextField: UITextField!
@@ -26,8 +26,8 @@ class EditRecipeTableViewController: UITableViewController, UITextViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.ingredientsTextView.delegate = self
-        self.instructionsTextView.delegate = self
+//        self.ingredientsTextView.delegate = self
+//        self.instructionsTextView.delegate = self
         
         self.nameTextField.delegate = self
         

@@ -19,8 +19,6 @@
 		7230553F1D270DCF0034ACE7 /* RecipeExViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7230553D1D270DCF0034ACE7 /* RecipeExViewController.xib */; };
 		723055421D2714740034ACE7 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723055401D2714740034ACE7 /* IngredientTableViewCell.swift */; };
 		723055431D2714740034ACE7 /* IngredientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723055411D2714740034ACE7 /* IngredientTableViewCell.xib */; };
-		723055461D2788FF0034ACE7 /* RecipeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723055441D2788FF0034ACE7 /* RecipeTitleTableViewCell.swift */; };
-		723055471D2788FF0034ACE7 /* RecipeTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723055451D2788FF0034ACE7 /* RecipeTitleTableViewCell.xib */; };
 		7230554B1D278F3C0034ACE7 /* TitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7230554A1D278F3C0034ACE7 /* TitleHeaderView.swift */; };
 		7230554D1D278F4D0034ACE7 /* TitleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7230554C1D278F4D0034ACE7 /* TitleHeaderView.xib */; };
 		7230554F1D2792290034ACE7 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7230554E1D2792290034ACE7 /* SectionHeaderView.xib */; };
@@ -46,6 +44,11 @@
 		7285B4D41D221DB300EF3101 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285B4D31D221DB300EF3101 /* Functions.swift */; };
 		72AAAD631D1718B0005FBEF2 /* RecipeListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */; };
 		72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */; };
+		72ADFE701D2855A80093ACE6 /* Oxygen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72ADFE6D1D2855A80093ACE6 /* Oxygen-Bold.ttf */; };
+		72ADFE711D2855A80093ACE6 /* Oxygen-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72ADFE6E1D2855A80093ACE6 /* Oxygen-Light.ttf */; };
+		72ADFE721D2855A80093ACE6 /* Oxygen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72ADFE6F1D2855A80093ACE6 /* Oxygen-Regular.ttf */; };
+		72ADFE751D2887AE0093ACE6 /* InstructionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ADFE731D2887AE0093ACE6 /* InstructionTableViewCell.swift */; };
+		72ADFE761D2887AE0093ACE6 /* InstructionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72ADFE741D2887AE0093ACE6 /* InstructionTableViewCell.xib */; };
 		72B11CB31D1EC2C800D4737F /* ExpandablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B11CB21D1EC2C800D4737F /* ExpandablePickerView.swift */; };
 		72E0ED731D1702DB0056044C /* RecipeListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E0ED711D1702DB0056044C /* RecipeListingViewController.swift */; };
 		72E0ED741D1702DB0056044C /* RecipeListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72E0ED721D1702DB0056044C /* RecipeListingViewController.xib */; };
@@ -68,8 +71,6 @@
 		7230553D1D270DCF0034ACE7 /* RecipeExViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeExViewController.xib; sourceTree = "<group>"; };
 		723055401D2714740034ACE7 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		723055411D2714740034ACE7 /* IngredientTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientTableViewCell.xib; sourceTree = "<group>"; };
-		723055441D2788FF0034ACE7 /* RecipeTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTitleTableViewCell.swift; sourceTree = "<group>"; };
-		723055451D2788FF0034ACE7 /* RecipeTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeTitleTableViewCell.xib; sourceTree = "<group>"; };
 		7230554A1D278F3C0034ACE7 /* TitleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
 		7230554C1D278F4D0034ACE7 /* TitleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleHeaderView.xib; sourceTree = "<group>"; };
 		7230554E1D2792290034ACE7 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
@@ -95,6 +96,11 @@
 		7285B4D31D221DB300EF3101 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListingTableViewCell.swift; sourceTree = "<group>"; };
 		72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListingTableViewCell.xib; sourceTree = "<group>"; };
+		72ADFE6D1D2855A80093ACE6 /* Oxygen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oxygen-Bold.ttf"; sourceTree = "<group>"; };
+		72ADFE6E1D2855A80093ACE6 /* Oxygen-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oxygen-Light.ttf"; sourceTree = "<group>"; };
+		72ADFE6F1D2855A80093ACE6 /* Oxygen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oxygen-Regular.ttf"; sourceTree = "<group>"; };
+		72ADFE731D2887AE0093ACE6 /* InstructionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionTableViewCell.swift; sourceTree = "<group>"; };
+		72ADFE741D2887AE0093ACE6 /* InstructionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionTableViewCell.xib; sourceTree = "<group>"; };
 		72B11CB21D1EC2C800D4737F /* ExpandablePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandablePickerView.swift; sourceTree = "<group>"; };
 		72E0ED711D1702DB0056044C /* RecipeListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListingViewController.swift; sourceTree = "<group>"; };
 		72E0ED721D1702DB0056044C /* RecipeListingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListingViewController.xib; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 		721FEECD1D161FE4007E6463 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				72ADFE6C1D28559C0093ACE6 /* Fonts */,
 				721FEEA41D15BC4D007E6463 /* Assets.xcassets */,
 				721FEEA61D15BC4E007E6463 /* LaunchScreen.storyboard */,
 				721FEEA91D15BC4E007E6463 /* Info.plist */,
@@ -201,14 +208,14 @@
 				7230553D1D270DCF0034ACE7 /* RecipeExViewController.xib */,
 				723055401D2714740034ACE7 /* IngredientTableViewCell.swift */,
 				723055411D2714740034ACE7 /* IngredientTableViewCell.xib */,
-				723055441D2788FF0034ACE7 /* RecipeTitleTableViewCell.swift */,
-				723055451D2788FF0034ACE7 /* RecipeTitleTableViewCell.xib */,
 				7230554A1D278F3C0034ACE7 /* TitleHeaderView.swift */,
 				7230554C1D278F4D0034ACE7 /* TitleHeaderView.xib */,
 				7230554E1D2792290034ACE7 /* SectionHeaderView.xib */,
 				723055501D27923B0034ACE7 /* SectionHeaderView.swift */,
 				723055521D27999A0034ACE7 /* InformationTableViewCell.swift */,
 				723055531D27999A0034ACE7 /* InformationTableViewCell.xib */,
+				72ADFE731D2887AE0093ACE6 /* InstructionTableViewCell.swift */,
+				72ADFE741D2887AE0093ACE6 /* InstructionTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -253,6 +260,16 @@
 				727A71731D1783C400AAF0A1 /* Edit */,
 			);
 			name = Recipe;
+			sourceTree = "<group>";
+		};
+		72ADFE6C1D28559C0093ACE6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				72ADFE6D1D2855A80093ACE6 /* Oxygen-Bold.ttf */,
+				72ADFE6E1D2855A80093ACE6 /* Oxygen-Light.ttf */,
+				72ADFE6F1D2855A80093ACE6 /* Oxygen-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		A83EE9E688FDFEDB11A3DE34 /* Frameworks */ = {
@@ -326,14 +343,17 @@
 			files = (
 				723055431D2714740034ACE7 /* IngredientTableViewCell.xib in Resources */,
 				7285B4D01D21F0F400EF3101 /* ParallaxHeader.xib in Resources */,
+				72ADFE711D2855A80093ACE6 /* Oxygen-Light.ttf in Resources */,
 				723055551D27999A0034ACE7 /* InformationTableViewCell.xib in Resources */,
+				72ADFE761D2887AE0093ACE6 /* InstructionTableViewCell.xib in Resources */,
+				72ADFE701D2855A80093ACE6 /* Oxygen-Bold.ttf in Resources */,
+				72ADFE721D2855A80093ACE6 /* Oxygen-Regular.ttf in Resources */,
 				721FEEA81D15BC4E007E6463 /* LaunchScreen.storyboard in Resources */,
 				7230554F1D2792290034ACE7 /* SectionHeaderView.xib in Resources */,
 				721FEEA51D15BC4D007E6463 /* Assets.xcassets in Resources */,
 				72E0ED741D1702DB0056044C /* RecipeListingViewController.xib in Resources */,
 				72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */,
 				7230553F1D270DCF0034ACE7 /* RecipeExViewController.xib in Resources */,
-				723055471D2788FF0034ACE7 /* RecipeTitleTableViewCell.xib in Resources */,
 				7230554D1D278F4D0034ACE7 /* TitleHeaderView.xib in Resources */,
 				721FEEA31D15BC4D007E6463 /* Main.storyboard in Resources */,
 			);
@@ -416,10 +436,10 @@
 				7230553E1D270DCF0034ACE7 /* RecipeExViewController.swift in Sources */,
 				721A382D1D1F6BEB00FA2E8D /* RecipeTableViewController.swift in Sources */,
 				7285B4B11D20422600EF3101 /* Recipe.swift in Sources */,
+				72ADFE751D2887AE0093ACE6 /* InstructionTableViewCell.swift in Sources */,
 				723055421D2714740034ACE7 /* IngredientTableViewCell.swift in Sources */,
 				7285B4B91D20688C00EF3101 /* AddCategoryTableViewController.swift in Sources */,
 				7285B4AF1D20422600EF3101 /* Instruction.swift in Sources */,
-				723055461D2788FF0034ACE7 /* RecipeTitleTableViewCell.swift in Sources */,
 				723055541D27999A0034ACE7 /* InformationTableViewCell.swift in Sources */,
 				723055571D279E530034ACE7 /* Helper.swift in Sources */,
 				727ACD221D18F633005BE002 /* EditRecipeViewController.swift in Sources */,

@@ -23,6 +23,8 @@ class RecipeExViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.registerNib(UINib(nibName: "RecipeTitleTableViewCell", bundle: nil), forCellReuseIdentifier: "RecipeTitleTableViewCell")
         
         self.tableView.registerNib(UINib(nibName: "InformationTableViewCell", bundle: nil), forCellReuseIdentifier: "InformationTableViewCell")
+        
+        self.tableView.registerNib(UINib(nibName: "InstructionTableViewCell", bundle: nil), forCellReuseIdentifier: "InstructionTableViewCell")
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -36,7 +38,7 @@ class RecipeExViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.parallaxHeader.mode = MXParallaxHeaderMode.Fill
         self.tableView.parallaxHeader.minimumHeight = 0
         
-        self.tableView.backgroundColor = Helper.UIColorFromRGB(0xeaf1f6)
+        self.tableView.backgroundColor = UIColor.clearColor()
         
         self.data = [["Header"], recipe.ingredients!.array, recipe.instructions!.array]
     }
@@ -75,12 +77,14 @@ class RecipeExViewController: UIViewController, UITableViewDelegate, UITableView
             return titleHeaderView
         case 1:
             let sectionHeaderView = SectionHeaderView.instanciateFromNib()
-            sectionHeaderView.headerTitle.text = "Ingredients"
+            sectionHeaderView.headerTitle.text = "INGREDIENTS"
+            sectionHeaderView.sectionImage.image = UIImage(named: "Ingredients")
             
             return sectionHeaderView
         default:
             let sectionHeaderView = SectionHeaderView.instanciateFromNib()
-            sectionHeaderView.headerTitle.text = "Preparation"
+            sectionHeaderView.headerTitle.text = "PREPARATION"
+            sectionHeaderView.sectionImage.image = UIImage(named: "Preparations")
             
             return sectionHeaderView
         }
@@ -91,9 +95,9 @@ class RecipeExViewController: UIViewController, UITableViewDelegate, UITableView
         case 0:
             return 50
         case 1:
-            return 44
+            return 122
         default:
-            return 44
+            return 122
         }
     }
     
@@ -108,14 +112,19 @@ class RecipeExViewController: UIViewController, UITableViewDelegate, UITableView
             let ingredient:Ingredient = data[indexPath.section][indexPath.row] as! Ingredient
             (cell as! IngredientTableViewCell).ingredientLabel.text = ingredient.name
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier("IngredientTableViewCell", forIndexPath: indexPath) as! IngredientTableViewCell
-
+            
+            let tempCell = tableView.dequeueReusableCellWithIdentifier("InstructionTableViewCell", forIndexPath: indexPath) as! InstructionTableViewCell
+            
             let instruction:Instruction = data[indexPath.section][indexPath.row] as! Instruction
-            (cell as! IngredientTableViewCell).ingredientLabel.text = instruction.text
+            
+            tempCell.setInstruction(indexPath.row + 1, instructionText: instruction.text!)
+            
+            cell = tempCell
+            
         default:
             cell = tableView.dequeueReusableCellWithIdentifier("InformationTableViewCell", forIndexPath: indexPath) as! InformationTableViewCell
             
-//            (cell as! InformationTableViewCell).titleLabel.text = data[indexPath.section][indexPath.row] as? String
+            (cell as! InformationTableViewCell).timeLabel.attributedText = Helper.StyleTime("10 min", cookTime: "1 hr")
         }
         
         return cell
@@ -126,10 +135,20 @@ class RecipeExViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+
+        switch indexPath.section {
+        default:
+            return UITableViewAutomaticDimension
+        }
+        
     }
     
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    
+        switch indexPath.section {
+        default:
+            return UITableViewAutomaticDimension
+        }
+    
     }
 }

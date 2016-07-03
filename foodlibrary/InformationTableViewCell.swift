@@ -9,6 +9,8 @@
 import UIKit
 
 class InformationTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var timeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
