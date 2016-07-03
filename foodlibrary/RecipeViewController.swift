@@ -131,7 +131,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         default:
             cell = tableView.dequeueReusableCellWithIdentifier("InformationTableViewCell", forIndexPath: indexPath) as! InformationTableViewCell
             
-            (cell as! InformationTableViewCell).timeLabel.attributedText = Helper.StyleTime("10 min", cookTime: "1 hr")
+            let prepTimeString = Helper.dateToString(self.recipe.prepTime!)
+            let cookTimeString = Helper.dateToString(self.recipe.cookTime!)
+            
+            (cell as! InformationTableViewCell).timeLabel.attributedText = Helper.StyleTime(prepTimeString, cookTime: cookTimeString)
         }
         
         return cell

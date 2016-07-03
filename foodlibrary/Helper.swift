@@ -31,11 +31,11 @@ class Helper: NSObject {
 
         let attributedString = NSMutableAttributedString(string: fullString as String)
         
-        attributedString.addAttributes(boldAttributes, range: fullString.rangeOfString("Prep:"))
-        attributedString.addAttributes(regularAttributes, range: fullString.rangeOfString(prepTime))
+        attributedString.addAttributes(boldAttributes, range: (prepTime as NSString).rangeOfString("Prep:"))
+        attributedString.addAttributes(regularAttributes, range: (prepTime as NSString).rangeOfString(prepTime))
 
-        attributedString.addAttributes(boldAttributes, range: fullString.rangeOfString("Cook:"))
-        attributedString.addAttributes(regularAttributes, range: fullString.rangeOfString(cookTime))
+        attributedString.addAttributes(boldAttributes, range: (cookTime as NSString).rangeOfString("Cook:"))
+        attributedString.addAttributes(regularAttributes, range: (cookTime as NSString).rangeOfString(cookTime))
 
         return attributedString
     }

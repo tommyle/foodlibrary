@@ -100,6 +100,9 @@ class EditRecipeTableViewController: UITableViewController, UITextFieldDelegate 
         self.ingredientsTextView.text = recipe?.getIngredientsAsString()
         self.instructionsTextView.text = recipe?.getInstructinsAsString()
         
+        self.cookTimePicker.setDate(recipe!.cookTime!, animated: false)
+        self.prepTimePicker.setDate(recipe!.prepTime!, animated: false)
+        
         self.ingredientsTextView.sizeToFit()
         self.instructionsTextView.sizeToFit()
     }
@@ -179,14 +182,11 @@ class EditRecipeTableViewController: UITableViewController, UITextFieldDelegate 
     }
     
     func datePickerValueChanged(sender: UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        
         if (sender.isEqual(cookTimePicker)) {
-            self.cookTimeTextField.text = dateFormatter.stringFromDate(cookTimePicker.date)
+            self.cookTimeTextField.text = Helper.dateToString(cookTimePicker.date)
         }
         else {
-            self.prepTimeTextField.text = dateFormatter.stringFromDate(prepTimePicker.date)
+            self.prepTimeTextField.text = Helper.dateToString(prepTimePicker.date)
         }
     }
     
