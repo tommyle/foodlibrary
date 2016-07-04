@@ -17,8 +17,17 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController!.toolbar.backgroundColor = UIColor.redColor()
-        self.navigationController!.toolbar.tintColor = UIColor.redColor()
+        self.tabBarController!.tabBar.barTintColor = UIColor.whiteColor()
+        self.tabBarController!.tabBar.translucent = false
+        
+        //Hide the tabBar item title
+        for tabBarItem in self.tabBarController!.tabBar.items! {
+            tabBarItem.title = ""
+            tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+        }
+        
+//        self.navigationController!.toolbar.backgroundColor = UIColor.redColor()
+//        self.navigationController!.toolbar.tintColor = UIColor.redColor()
         //        self.navigationController!.toolbar.barStyle = UIBarStyleBlack
         
 //        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)

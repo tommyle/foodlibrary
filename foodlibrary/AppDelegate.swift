@@ -17,8 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        self.window?.rootViewController?.navigationController?.toolbar.backgroundColor = UIColor.redColor()
-        self.window?.rootViewController?.navigationController?.toolbar.tintColor = UIColor.redColor()
+        //Sets color of the tab bar items when they are selected
+        UITabBar.appearance().tintColor = Helper.UIColorFromRGB(0x9274ed)
+        
+//        for tabBarItem in self.window?.rootViewController?.tabBarController?.tabBar.items {
+//            tabBarItem.title = ""
+//            tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+//        }
         
 //        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
