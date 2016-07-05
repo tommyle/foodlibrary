@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '95735FFC83C4F1B46725703C'
-               BlueprintName = 'MagicalRecord'
+               BlueprintIdentifier = '193F603A4CF9AFD33331DE33'
+               BlueprintName = 'Fuzi'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'MagicalRecord.framework'>
+               BuildableName = 'Fuzi.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

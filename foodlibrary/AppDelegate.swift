@@ -19,15 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Sets color of the tab bar items when they are selected
         UITabBar.appearance().tintColor = Helper.UIColorFromRGB(0x9274ed)
-        
-//        for tabBarItem in self.window?.rootViewController?.tabBarController?.tabBar.items {
-//            tabBarItem.title = ""
-//            tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-//        }
-        
-//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
         MagicalRecord.setupCoreDataStackWithStoreNamed("Model")
+        
+        //++ Test Code
+        
+        
+        
+        //-- Test Code
                 
         return true
     }

@@ -82,3 +82,14 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-foodlibrary/Fuzi.framework"
+  install_framework "Pods-foodlibrary/MXParallaxHeader.framework"
+  install_framework "Pods-foodlibrary/MagicalRecord.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-foodlibrary/Fuzi.framework"
+  install_framework "Pods-foodlibrary/MXParallaxHeader.framework"
+  install_framework "Pods-foodlibrary/MagicalRecord.framework"
+fi
