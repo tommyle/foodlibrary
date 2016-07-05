@@ -91,8 +91,10 @@ class EditRecipeTableViewController: UITableViewController, UITextFieldDelegate 
     }
     
     func editExistingRecipe() {
-        let filePath = (applicationDocumentsDirectory as NSString).stringByAppendingPathComponent(self.recipe!.imagePath!)
-        headerView.backgroundImage.image = UIImage(contentsOfFile: filePath)
+        if (self.recipe!.imagePath != nil) {
+            let filePath = (applicationDocumentsDirectory as NSString).stringByAppendingPathComponent(self.recipe!.imagePath!)
+            headerView.backgroundImage.image = UIImage(contentsOfFile: filePath)
+        }
         
         self.nameTextField.text = recipe?.name
         self.cookTimeTextField.text = Helper.dateToString((recipe?.cookTime)!)

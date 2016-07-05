@@ -21,9 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = Helper.UIColorFromRGB(0x9274ed)
 
         MagicalRecord.setupCoreDataStackWithStoreNamed("Model")
-        
-        Parser.parse("http://allrecipes.com/recipe/127565/steak-on-a-stick/?internalSource=previously%20viewed&referringContentType=home%20page")
-                
+                        
         return true
     }
 

@@ -53,9 +53,13 @@ class Helper: NSObject {
         }
     }
     
-    static func dateToString(date: NSDate) -> String {
+    static func dateToString(date: NSDate?) -> String {
+        if (date == nil) {
+            return "0 mins"
+        }
+        
         let calendar = NSCalendar.currentCalendar()
-        let comp = calendar.components([.Hour, .Minute], fromDate: date)
+        let comp = calendar.components([.Hour, .Minute], fromDate: date!)
         let hour = comp.hour
         let minute = comp.minute
         

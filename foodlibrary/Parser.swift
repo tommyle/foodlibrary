@@ -11,9 +11,11 @@ import Fuzi
 
 class Parser: NSObject {
 
-    static func parse(recipeURL:String) {
+    static func parse(recipeURL:String) -> Recipe? {
         //let myURLString = "http://allrecipes.com/recipe/14186/"
         
+        var recipe = Recipe.createEntity() as? Recipe
+
         if let myURL = NSURL(string: recipeURL) {
             
             do {
@@ -24,7 +26,10 @@ class Parser: NSObject {
                 //image
                 if let recipeImagePath = doc.firstChild(xpath: "//img[@class=\"rec-photo\"]") {
                     if (recipeImagePath.attr("src") != nil) {
-                        print(recipeImagePath.attr("src")!)
+                        let remoteImage = (recipeImagePath.attr("src")!)
+                        
+                        let image = UIImage(data: NSData(contentsOfURL: NSURL(string: remoteImage)!)!)
+                        ImageSaver.saveImageToDisk(image!, andToRecipe: recipe!)
                     }
                 }
                 
@@ -32,6 +37,7 @@ class Parser: NSObject {
                 if let recipeTitle = doc.firstChild(xpath: "//img[@class=\"rec-photo\"]") {
                     if (recipeTitle.attr("title") != nil) {
                         print(recipeTitle.attr("title")!)
+                        recipe?.name = recipeTitle.attr("title")!
                     }
                 }
                 
@@ -39,6 +45,7 @@ class Parser: NSObject {
                 if let prepTimeUnit = doc.firstChild(xpath: "//time[@itemprop=\"prepTime\"]") {
                     if (prepTimeUnit.attr("datetime") != nil) {
                         print(prepTimeUnit.attr("datetime")!)
+                        recipe?.prepTime = NSDate()
                     }
                 }
                 
@@ -46,24 +53,39 @@ class Parser: NSObject {
                 if let cookTime = doc.firstChild(xpath: "//time[@itemprop=\"cookTime\"]") {
                     if (cookTime.attr("datetime") != nil) {
                         print(cookTime.attr("datetime")!)
+                        recipe?.cookTime = NSDate()
                     }
                 }
                 
+                let ingredients: NSMutableOrderedSet! = recipe!.mutableOrderedSetValueForKey("ingredients")
+                
                 let ingredientSet:XPathNodeSet = doc.xpath("//span[@itemprop=\"ingredients\"]/text()")
                 for i in ingredientSet {
-                    print(i)
+                    let ingredient: Ingredient!
+                    ingredient = Ingredient.createEntity() as! Ingredient
+                    ingredient.name = i.stringValue
+                    ingredients.addObject(ingredient)
                 }
+                
+                let instructions: NSMutableOrderedSet! = recipe!.mutableOrderedSetValueForKey("instructions")
                 
                 let instructionSet:XPathNodeSet = doc.xpath("//span[@class=\"recipe-directions__list--item\"]/text()")
                 for i in instructionSet {
-                    print(i)
+                    let instruction: Instruction!
+                    instruction = Instruction.createEntity() as! Instruction
+                    instruction.text = i.stringValue
+                    instructions.addObject(instruction)
                 }
                 
             } catch {
                 print("Error : \(error)")
+                recipe = nil
             }
         } else {
             print("Error: \(recipeURL) invalid URL?")
+            recipe = nil
         }
+        
+        return recipe
     }
 }
