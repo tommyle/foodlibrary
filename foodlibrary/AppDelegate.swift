@@ -22,11 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         MagicalRecord.setupCoreDataStackWithStoreNamed("Model")
         
-        //++ Test Code
-        
-        
-        
-        //-- Test Code
+        Parser.parse("http://allrecipes.com/recipe/127565/steak-on-a-stick/?internalSource=previously%20viewed&referringContentType=home%20page")
                 
         return true
     }
