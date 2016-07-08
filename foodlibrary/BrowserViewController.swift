@@ -28,15 +28,15 @@ class BrowserViewController: UIViewController {
         
         let url = NSURL (string: "http://www.allrecipes.com");
         let vc = WebViewController.init(URL: url)
-        vc.supportedWebNavigationTools = DZNWebNavigationTools.All
-        vc.supportedWebActions = DZNsupportedWebActions.DZNWebActionAll;
+        vc.supportedWebNavigationTools = DZNWebNavigationTools.None
+        vc.supportedWebActions = DZNsupportedWebActions.DZNWebActionNone;
         vc.showLoadingProgress = true;
         vc.allowHistory = true;
-        vc.hideBarsWithGestures = false;
+        vc.hideBarsWithGestures = true;
         
-        self.nav = UINavigationController.init(rootViewController: vc)
+//        self.nav = UINavigationController.init(rootViewController: vc)
         
-        //        self.navigationController?.pushViewController(vc, animated: true)
-        self.presentViewController(self.nav, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+//        self.presentViewController(self.nav, animated: true, completion: nil)
     }
 }

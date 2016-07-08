@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BD222EFF2DCB58801AB8830D'
-               BlueprintName = 'MagicalRecord'
+               BlueprintIdentifier = '8D62C74E67E6D57873B4D524'
+               BlueprintName = 'MEVFloatingButton'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'MagicalRecord.framework'>
+               BuildableName = 'MEVFloatingButton.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

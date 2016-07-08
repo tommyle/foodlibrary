@@ -55,13 +55,8 @@ class EditRecipeTableViewController: UITableViewController, UITextFieldDelegate 
         self.cookTimePicker.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.prepTimePicker.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
-        let dateString = "00:00"
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        let dateObj = dateFormatter.dateFromString(dateString)
-        
-        self.cookTimePicker.setDate(dateObj!, animated: true)
-        self.prepTimePicker.setDate(dateObj!, animated: true)
+        self.cookTimePicker.setDate(Helper.stringToDate("00:00"), animated: true)
+        self.prepTimePicker.setDate(Helper.stringToDate("00:00"), animated: true)
         
         if (self.recipe != nil) {
             self.editExistingRecipe()

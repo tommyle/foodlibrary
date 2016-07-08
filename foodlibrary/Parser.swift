@@ -32,6 +32,9 @@ class Parser: NSObject {
                         ImageSaver.saveImageToDisk(image!, andToRecipe: recipe!)
                     }
                 }
+                else {
+                    return nil
+                }
                 
                 //recipe title
                 if let recipeTitle = doc.firstChild(xpath: "//img[@class=\"rec-photo\"]") {
@@ -40,21 +43,32 @@ class Parser: NSObject {
                         recipe?.name = recipeTitle.attr("title")!
                     }
                 }
+                else {
+                    return nil
+                }
                 
                 //prep time
                 if let prepTimeUnit = doc.firstChild(xpath: "//time[@itemprop=\"prepTime\"]") {
                     if (prepTimeUnit.attr("datetime") != nil) {
                         print(prepTimeUnit.attr("datetime")!)
-                        recipe?.prepTime = NSDate()
+                        recipe?.prepTime = Helper.stringToDate("00:00")
                     }
                 }
                 
+                if (recipe?.prepTime == nil) {
+                    recipe?.prepTime = Helper.stringToDate("00:00")
+                }
+
                 //cook time
                 if let cookTime = doc.firstChild(xpath: "//time[@itemprop=\"cookTime\"]") {
                     if (cookTime.attr("datetime") != nil) {
                         print(cookTime.attr("datetime")!)
-                        recipe?.cookTime = NSDate()
+                        recipe?.cookTime = Helper.stringToDate("00:00")
                     }
+                }
+                
+                if (recipe?.cookTime == nil) {
+                    recipe?.cookTime = Helper.stringToDate("00:00")
                 }
                 
                 let ingredients: NSMutableOrderedSet! = recipe!.mutableOrderedSetValueForKey("ingredients")

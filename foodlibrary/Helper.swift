@@ -70,4 +70,12 @@ class Helper: NSObject {
             return "\(hour) hrs \(minute) mins"
         }
     }
+    
+    static func stringToDate(hhmm: String!) -> NSDate {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let dateObj = dateFormatter.dateFromString(hhmm)
+
+        return dateObj!
+    }
 }

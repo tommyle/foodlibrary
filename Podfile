@@ -10,5 +10,7 @@ target 'foodlibrary' do
     pod 'DZNWebViewController', :git => 'https://github.com/tommyle/DZNWebViewController.git', :commit => 'fa0ca26f18446f3793d7724bfda67b01d1fd277f'
     pod 'LiquidFloatingActionButton'
     pod 'PKHUD'
+    pod 'HidingNavigationBar', '~> 0.3'
+    pod 'MEVFloatingButton'
 end
 

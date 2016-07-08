@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BD222EFF2DCB58801AB8830D'
-               BlueprintName = 'MagicalRecord'
+               BlueprintIdentifier = 'D6833F193496B639165D98CD'
+               BlueprintName = 'HidingNavigationBar'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'MagicalRecord.framework'>
+               BuildableName = 'HidingNavigationBar.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

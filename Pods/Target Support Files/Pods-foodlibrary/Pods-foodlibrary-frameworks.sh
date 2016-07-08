@@ -86,7 +86,9 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-foodlibrary/DZNWebViewController.framework"
   install_framework "Pods-foodlibrary/Fuzi.framework"
+  install_framework "Pods-foodlibrary/HidingNavigationBar.framework"
   install_framework "Pods-foodlibrary/LiquidFloatingActionButton.framework"
+  install_framework "Pods-foodlibrary/MEVFloatingButton.framework"
   install_framework "Pods-foodlibrary/MXParallaxHeader.framework"
   install_framework "Pods-foodlibrary/MagicalRecord.framework"
   install_framework "Pods-foodlibrary/PKHUD.framework"
@@ -94,7 +96,9 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-foodlibrary/DZNWebViewController.framework"
   install_framework "Pods-foodlibrary/Fuzi.framework"
+  install_framework "Pods-foodlibrary/HidingNavigationBar.framework"
   install_framework "Pods-foodlibrary/LiquidFloatingActionButton.framework"
+  install_framework "Pods-foodlibrary/MEVFloatingButton.framework"
   install_framework "Pods-foodlibrary/MXParallaxHeader.framework"
   install_framework "Pods-foodlibrary/MagicalRecord.framework"
   install_framework "Pods-foodlibrary/PKHUD.framework"
