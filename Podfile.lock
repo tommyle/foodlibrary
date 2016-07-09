@@ -2,9 +2,7 @@ PODS:
   - DZNWebViewController (3.2)
   - Fuzi (0.3.1)
   - HidingNavigationBar (0.3.0)
-  - LiquidFloatingActionButton (1.2.0)
   - MagicalRecord/Shorthand (2.2)
-  - MEVFloatingButton (1.2)
   - MXParallaxHeader (0.5.0)
   - PKHUD (3.2.1)
 
@@ -13,9 +11,7 @@ DEPENDENCIES:
     commit `fa0ca26f18446f3793d7724bfda67b01d1fd277f`)
   - Fuzi (~> 0.3.0)
   - HidingNavigationBar (~> 0.3)
-  - LiquidFloatingActionButton
   - MagicalRecord/Shorthand
-  - MEVFloatingButton
   - MXParallaxHeader (= 0.5.0)
   - PKHUD
 
@@ -33,9 +29,7 @@ SPEC CHECKSUMS:
   DZNWebViewController: 8e927a5de637fe0c4104c001d5cccd4fa5621e50
   Fuzi: 25118b725a1637f1676f63ae1acbba1f30a5dd6c
   HidingNavigationBar: 6378af14cea27bfef8be73470b081a36d45b87c4
-  LiquidFloatingActionButton: 9c28961915754e08cf596ea6bdd60f9cd949f172
   MagicalRecord: 2dc87179ae7c1f2a274442624ec65a07d4357a6f
-  MEVFloatingButton: 63dd4b95d8d58bc0b82b84535a73434d24a4fe84
   MXParallaxHeader: c7dfdf8d769a8eb868a431ec3aeaf994a147b8bc
   PKHUD: 001c11518f125a273ddf026bcc64918423744ea2
 

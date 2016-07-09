@@ -103,8 +103,7 @@ static char DZNWebViewControllerKVOContext = 0;
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc ] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
-    self.navigationItem.leftBarButtonItem = doneButton;
+    self.navigationItem.leftBarButtonItem = self.backwardBarItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -12,36 +12,52 @@ import PKHUD
 import HidingNavigationBar
 import MEVFloatingButton
 
-class WebViewController: DZNWebViewController, MEVFloatingButtonDelegate {
+class WebViewController: DZNWebViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
 
     var hidingNavBarManager: HidingNavigationBarManager?
+    var searchController : UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(saveTapped))
+        
+        /*
+        let backButton: UIButton = UIButton()
+        backButton.setImage(UIImage(named: "backward"), forState: .Normal)
+        backButton.frame = CGRectMake(0, 0, 30, 30)
+//        searchButton.addTarget(self, action: #selector(saveTapped))", forControlEvents: .TouchUpInside)
+        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(customView: backButton), animated: true)
+        */
+        
+        self.searchController = UISearchController(searchResultsController:  nil)
+        
+        self.searchController.searchResultsUpdater = self
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.dimsBackgroundDuringPresentation = true
+        
+        
+//        let searchImage = UIImage(named: "backward")!
+        let saveImage   = UIImage(named: "Download")!
+        
+//        let searchButton = UIBarButtonItem(image: searchImage,  style: .Plain, target: self, action: #selector(searchButtonPressed))
+        let saveButton = UIBarButtonItem(image: saveImage,  style: .Plain, target: self, action: #selector(saveButtonPressed))
+        
+        navigationItem.rightBarButtonItems = [saveButton]
+        
+        searchController.searchBar.searchBarStyle = UISearchBarStyle.Minimal;
+        self.navigationItem.titleView = searchController.searchBar
 
+        
         if (self.webView != nil) {
 //            hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: self.webView.scrollView)
             
 //            if let tabBar = navigationController?.tabBarController?.tabBar {
 //                hidingNavBarManager?.manageBottomBar(tabBar)
 //            }
-            let button = MEVFloatingButton()
-            
-            button.animationType = MEVFloatingButtonAnimation.MEVFloatingButtonAnimationFromBottom
-            button.displayMode =  MEVFloatingButtonDisplayMode.WhenScrolling
-            button.position = MEVFloatingButtonPosition.BottomCenter
-            button.image = UIImage(named: "Preparations")
-//            button.imageColor = UIColor.redColor()
-//            button.backgroundColor = UIColor.grayColor()
-//            button.outlineColor = UIColor.darkGrayColor()
-            button.outlineWidth = 0.0
-            button.imagePadding = 0.0
-            button.horizontalOffset = 0.0
-            button.verticalOffset = 0.0
-            button.rounded = true
-            
-            self.webView.scrollView.setFloatingButtonView(button)
-            //        button.delegate = self
         }
     }
     
@@ -62,14 +78,18 @@ class WebViewController: DZNWebViewController, MEVFloatingButtonDelegate {
         
         hidingNavBarManager?.viewWillDisappear(animated)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    override func presentActivityController(sender: AnyObject!) {
+    
+    override func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
+        hidingNavBarManager?.shouldScrollToTop()
         
+        return true
+    }
+    
+    func searchButtonPressed() {
+        
+    }
+    
+    func saveButtonPressed() {
         if (self.webView.URL?.absoluteString == nil) {
             return
         }
@@ -92,12 +112,24 @@ class WebViewController: DZNWebViewController, MEVFloatingButtonDelegate {
         }
     }
     
-    override func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
-        hidingNavBarManager?.shouldScrollToTop()
-        
-        return true
+    //MARK: UISearchResultsUpdating
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
     }
     
-    ///- (void)presentActivityController:(id)sender;
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        if let searchTerm = self.searchController.searchBar.text {
+            
+            if let escapedString = searchTerm.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet()) {
+                
+                if let url = NSURL(string: "http://allrecipes.com/search/results/?wt=" + escapedString + "&sort=re") {
+                    
+                    let request = NSURLRequest(URL: url)
+                    self.webView.loadRequest(request)
+                }
+            }
+        }
+        
+        self.searchController.active = false
+    }
 
 }

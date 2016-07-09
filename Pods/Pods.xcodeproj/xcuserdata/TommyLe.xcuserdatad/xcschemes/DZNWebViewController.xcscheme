@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FE8268B88034975135AFCA8D'
+               BlueprintIdentifier = '3040A3D9C80C142CB91CD8A5'
                BlueprintName = 'DZNWebViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'DZNWebViewController.framework'>

@@ -26,13 +26,14 @@ class BrowserViewController: UIViewController {
     
     @IBAction func broswerButtonPressed(sender: AnyObject) {
         
-        let url = NSURL (string: "http://www.allrecipes.com");
+        let url = NSURL (string: "http://www.allrecipes.com")
         let vc = WebViewController.init(URL: url)
         vc.supportedWebNavigationTools = DZNWebNavigationTools.None
-        vc.supportedWebActions = DZNsupportedWebActions.DZNWebActionNone;
-        vc.showLoadingProgress = true;
-        vc.allowHistory = true;
-        vc.hideBarsWithGestures = true;
+        vc.supportedWebActions = DZNsupportedWebActions.DZNWebActionNone
+        vc.showLoadingProgress = true
+        vc.allowHistory = true
+        vc.hideBarsWithGestures = true
+        vc.showPageTitleAndURL = false
         
 //        self.nav = UINavigationController.init(rootViewController: vc)
         
