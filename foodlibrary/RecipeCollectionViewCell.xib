@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A239j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Oxygen-Regular.ttf">
+            <string>Oxygen-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="RecipeCollectionViewCell" customModule="foodlibrary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="153" height="201"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="153" height="201"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHU-pd-Lb8">
+                        <rect key="frame" x="0.0" y="0.0" width="153" height="201"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Hz-Ib-Ptl">
+                        <rect key="frame" x="0.0" y="0.0" width="153" height="151.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lemon Basil Seared Scallop Pasta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cAw-nq-omP">
+                        <rect key="frame" x="8" y="157.5" width="137" height="35.5"/>
+                        <fontDescription key="fontDescription" name="Oxygen-Regular" family="Oxygen" pointSize="14"/>
+                        <color key="textColor" red="0.41176470590000003" green="0.43137254899999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cAw-nq-omP" secondAttribute="trailing" constant="8" id="1z3-QI-e3T"/>
+                <constraint firstItem="cAw-nq-omP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="9Zu-SH-sEn"/>
+                <constraint firstItem="YHU-pd-Lb8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OEg-kp-OJZ"/>
+                <constraint firstItem="0Hz-Ib-Ptl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WbO-zl-aSy"/>
+                <constraint firstItem="0Hz-Ib-Ptl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Y4h-R0-NhT"/>
+                <constraint firstItem="cAw-nq-omP" firstAttribute="top" secondItem="0Hz-Ib-Ptl" secondAttribute="bottom" constant="6" id="guU-ym-lRY"/>
+                <constraint firstAttribute="bottom" secondItem="cAw-nq-omP" secondAttribute="bottom" constant="8" id="hdD-7H-JhV"/>
+                <constraint firstAttribute="bottom" secondItem="YHU-pd-Lb8" secondAttribute="bottom" id="nEz-De-Qm0"/>
+                <constraint firstAttribute="trailing" secondItem="YHU-pd-Lb8" secondAttribute="trailing" id="nlL-I9-kSl"/>
+                <constraint firstItem="YHU-pd-Lb8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tAK-Dp-BfX"/>
+                <constraint firstAttribute="trailing" secondItem="0Hz-Ib-Ptl" secondAttribute="trailing" id="u8P-fK-qu3"/>
+            </constraints>
+            <size key="customSize" width="153" height="201"/>
+            <connections>
+                <outlet property="borderView" destination="YHU-pd-Lb8" id="s85-zU-wlJ"/>
+                <outlet property="imageView" destination="0Hz-Ib-Ptl" id="zib-d7-85F"/>
+                <outlet property="titleLabel" destination="cAw-nq-omP" id="6Gc-gK-5wn"/>
+            </connections>
+            <point key="canvasLocation" x="336.5" y="330.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

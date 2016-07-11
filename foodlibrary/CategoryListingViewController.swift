@@ -105,10 +105,10 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let recipeListingViewController:RecipeListingViewController = RecipeListingViewController()
-        recipeListingViewController.category = categories[indexPath.row]
+        let recipeListingExViewController:RecipeListingExViewController = RecipeListingExViewController()
+        recipeListingExViewController.category = categories[indexPath.row]
         
-        self.navigationController?.pushViewController(recipeListingViewController, animated: true)
+        self.navigationController?.pushViewController(recipeListingExViewController, animated: true)
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

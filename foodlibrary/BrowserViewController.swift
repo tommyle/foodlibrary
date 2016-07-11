@@ -32,7 +32,7 @@ class BrowserViewController: UIViewController {
         vc.supportedWebActions = DZNsupportedWebActions.DZNWebActionNone
         vc.showLoadingProgress = true
         vc.allowHistory = true
-        vc.hideBarsWithGestures = true
+        vc.hideBarsWithGestures = false
         vc.showPageTitleAndURL = false
         
 //        self.nav = UINavigationController.init(rootViewController: vc)

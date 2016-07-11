@@ -19,7 +19,7 @@ class WebViewController: DZNWebViewController, UISearchControllerDelegate, UISea
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(saveTapped))
         
         /*
@@ -53,7 +53,7 @@ class WebViewController: DZNWebViewController, UISearchControllerDelegate, UISea
 
         
         if (self.webView != nil) {
-//            hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: self.webView.scrollView)
+            hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: self.webView.scrollView)
             
 //            if let tabBar = navigationController?.tabBarController?.tabBar {
 //                hidingNavBarManager?.manageBottomBar(tabBar)
