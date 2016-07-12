@@ -43,6 +43,7 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.registerNib(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
         
         self.fetchAllCategories()
         
@@ -95,11 +96,20 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "Cell"
+        let cellIdentifier = "CategoryTableViewCell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        let cell : CategoryTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CategoryTableViewCell
         
-        cell.textLabel?.text = categories[indexPath.row].name!
+        let cateogry:Category = categories[indexPath.row]
+        
+        cell.label?.text = cateogry.name!
+        
+        if (cateogry.name == "All") {
+            cell.count?.text = String(cateogry.fetchCountAll())
+        }
+        else {
+            cell.count?.text = String(cateogry.fetchCount())
+        }
         
         return cell
     }

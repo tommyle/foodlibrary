@@ -27,7 +27,12 @@ class RecipeListingExViewController: UIViewController, UICollectionViewDataSourc
         self.collectionView!.registerNib(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.backgroundColor = UIColor.clearColor()
         
-        self.fetchAllRecipes()
+        if (category.name == "All") {
+            recipes = category.fetchAllRecipes()
+        }
+        else {
+            recipes = category.fetchRecipes()
+        }
         
         let flow = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flow.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -93,17 +98,5 @@ class RecipeListingExViewController: UIViewController, UICollectionViewDataSourc
                         layout collectionViewLayout: UICollectionViewLayout,
                                insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return sectionInsets
-    }
-
-    // MARK: MagicalRecord Methods
-    func fetchAllRecipes() {
-        if (category.name == "All") {
-            recipes = Recipe.findAllSortedBy("name", ascending: true) as! [Recipe]
-        }
-        else {
-            let predicate = NSPredicate(format: "category.name = %@", category.name!)
-            recipes = Recipe.findAllSortedBy("name", ascending: true, withPredicate: predicate) as! [Recipe]
-        }
-        
     }
 }

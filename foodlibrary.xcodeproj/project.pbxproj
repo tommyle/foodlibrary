@@ -44,6 +44,8 @@
 		7285B4D01D21F0F400EF3101 /* ParallaxHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7285B4CF1D21F0F400EF3101 /* ParallaxHeader.xib */; };
 		7285B4D21D221C9500EF3101 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285B4D11D221C9500EF3101 /* ImageSaver.swift */; };
 		7285B4D41D221DB300EF3101 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285B4D31D221DB300EF3101 /* Functions.swift */; };
+		72A5EFF21D349214003AF71E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5EFF01D349214003AF71E /* CategoryTableViewCell.swift */; };
+		72A5EFF31D349214003AF71E /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A5EFF11D349214003AF71E /* CategoryTableViewCell.xib */; };
 		72AAAD631D1718B0005FBEF2 /* RecipeListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */; };
 		72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */; };
 		72ADFE701D2855A80093ACE6 /* Oxygen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72ADFE6D1D2855A80093ACE6 /* Oxygen-Bold.ttf */; };
@@ -101,6 +103,8 @@
 		7285B4CF1D21F0F400EF3101 /* ParallaxHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParallaxHeader.xib; sourceTree = "<group>"; };
 		7285B4D11D221C9500EF3101 /* ImageSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		7285B4D31D221DB300EF3101 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		72A5EFF01D349214003AF71E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		72A5EFF11D349214003AF71E /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListingTableViewCell.swift; sourceTree = "<group>"; };
 		72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListingTableViewCell.xib; sourceTree = "<group>"; };
 		72ADFE6D1D2855A80093ACE6 /* Oxygen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oxygen-Bold.ttf"; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 			children = (
 				7285B4B81D20688C00EF3101 /* AddCategoryTableViewController.swift */,
 				721FEE9D1D15BC4D007E6463 /* CategoryListingViewController.swift */,
+				72A5EFF01D349214003AF71E /* CategoryTableViewCell.swift */,
+				72A5EFF11D349214003AF71E /* CategoryTableViewCell.xib */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				7279FCEA1D32CAEF00F8CF26 /* RecipeCollectionViewCell.xib in Resources */,
 				723055431D2714740034ACE7 /* IngredientTableViewCell.xib in Resources */,
 				7285B4D01D21F0F400EF3101 /* ParallaxHeader.xib in Resources */,
+				72A5EFF31D349214003AF71E /* CategoryTableViewCell.xib in Resources */,
 				72ADFE711D2855A80093ACE6 /* Oxygen-Light.ttf in Resources */,
 				723055551D27999A0034ACE7 /* InformationTableViewCell.xib in Resources */,
 				72ADFE761D2887AE0093ACE6 /* InstructionTableViewCell.xib in Resources */,
@@ -464,6 +471,7 @@
 				7285B4AD1D20422600EF3101 /* Category.swift in Sources */,
 				7285B4AE1D20422600EF3101 /* Instruction+CoreDataProperties.swift in Sources */,
 				7285B4B21D20422600EF3101 /* Ingredient+CoreDataProperties.swift in Sources */,
+				72A5EFF21D349214003AF71E /* CategoryTableViewCell.swift in Sources */,
 				7285B4D41D221DB300EF3101 /* Functions.swift in Sources */,
 				72ADFE841D2C16620093ACE6 /* BrowserViewController.swift in Sources */,
 				721FEEB21D15BE39007E6463 /* Model.xcdatamodeld in Sources */,
