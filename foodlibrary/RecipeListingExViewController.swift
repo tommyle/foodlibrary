@@ -9,7 +9,8 @@
 import UIKit
 
 private let reuseIdentifier = "RecipeCollectionViewCell"
-private let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+private let margin: CGFloat = 10.0
+private let sectionInsets = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
 
 class RecipeListingExViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
@@ -32,8 +33,8 @@ class RecipeListingExViewController: UIViewController, UICollectionViewDataSourc
         flow.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
         let width = UIScreen.mainScreen().bounds.size.width - 40
         flow.itemSize = CGSizeMake(width/2, width/2)
-        flow.minimumInteritemSpacing = 20
-        flow.minimumLineSpacing = 20
+        flow.minimumInteritemSpacing = margin
+        flow.minimumLineSpacing = margin
         
         self.view.backgroundColor = Helper.UIColorFromRGB(0xf8f8fc)
     }
@@ -81,7 +82,7 @@ class RecipeListingExViewController: UIViewController, UICollectionViewDataSourc
                                    sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         //20 on each side plus 20 spacing in between items = 60
-        let w = UIScreen.mainScreen().bounds.size.width - 60
+        let w = UIScreen.mainScreen().bounds.size.width - margin * 3
         
         //w 153, h 201
         

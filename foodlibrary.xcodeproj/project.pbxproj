@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7217C6681D348E50004FDBC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7217C6671D348E50004FDBC5 /* Assets.xcassets */; };
 		721FEE9C1D15BC4D007E6463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEE9B1D15BC4D007E6463 /* AppDelegate.swift */; };
 		721FEE9E1D15BC4D007E6463 /* CategoryListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721FEE9D1D15BC4D007E6463 /* CategoryListingViewController.swift */; };
 		721FEEA31D15BC4D007E6463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 721FEEA11D15BC4D007E6463 /* Main.storyboard */; };
-		721FEEA51D15BC4D007E6463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 721FEEA41D15BC4D007E6463 /* Assets.xcassets */; };
 		721FEEA81D15BC4E007E6463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 721FEEA61D15BC4E007E6463 /* LaunchScreen.storyboard */; };
 		721FEEB21D15BE39007E6463 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 721FEEB01D15BE39007E6463 /* Model.xcdatamodeld */; };
 		7230553E1D270DCF0034ACE7 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7230553C1D270DCF0034ACE7 /* RecipeViewController.swift */; };
@@ -61,11 +61,11 @@
 
 /* Begin PBXFileReference section */
 		16EE633E6CE0C47419D3AB17 /* Pods-foodlibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodlibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodlibrary/Pods-foodlibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		7217C6671D348E50004FDBC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		721FEE981D15BC4D007E6463 /* foodlibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodlibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		721FEE9B1D15BC4D007E6463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		721FEE9D1D15BC4D007E6463 /* CategoryListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListingViewController.swift; sourceTree = "<group>"; };
 		721FEEA21D15BC4D007E6463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		721FEEA41D15BC4D007E6463 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		721FEEA71D15BC4E007E6463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		721FEEA91D15BC4E007E6463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		721FEEB11D15BE39007E6463 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -169,6 +169,7 @@
 		721FEE9A1D15BC4D007E6463 /* foodlibrary */ = {
 			isa = PBXGroup;
 			children = (
+				7217C6671D348E50004FDBC5 /* Assets.xcassets */,
 				72ADFE7C1D2B61FF0093ACE6 /* Parser */,
 				721519521D19A0FF00CFF554 /* Libraries */,
 				721FEECD1D161FE4007E6463 /* Support Files */,
@@ -204,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				72ADFE6C1D28559C0093ACE6 /* Fonts */,
-				721FEEA41D15BC4D007E6463 /* Assets.xcassets */,
 				721FEEA61D15BC4E007E6463 /* LaunchScreen.storyboard */,
 				721FEEA91D15BC4E007E6463 /* Info.plist */,
 				721FEEC31D15C481007E6463 /* FoodLibrary-Bridging-Header.h */,
@@ -378,11 +378,11 @@
 				72ADFE711D2855A80093ACE6 /* Oxygen-Light.ttf in Resources */,
 				723055551D27999A0034ACE7 /* InformationTableViewCell.xib in Resources */,
 				72ADFE761D2887AE0093ACE6 /* InstructionTableViewCell.xib in Resources */,
+				7217C6681D348E50004FDBC5 /* Assets.xcassets in Resources */,
 				72ADFE701D2855A80093ACE6 /* Oxygen-Bold.ttf in Resources */,
 				72ADFE721D2855A80093ACE6 /* Oxygen-Regular.ttf in Resources */,
 				721FEEA81D15BC4E007E6463 /* LaunchScreen.storyboard in Resources */,
 				7230554F1D2792290034ACE7 /* SectionHeaderView.xib in Resources */,
-				721FEEA51D15BC4D007E6463 /* Assets.xcassets in Resources */,
 				72E0ED741D1702DB0056044C /* RecipeListingViewController.xib in Resources */,
 				72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */,
 				7230553F1D270DCF0034ACE7 /* RecipeViewController.xib in Resources */,

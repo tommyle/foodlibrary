@@ -23,7 +23,7 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
         //Hide the tabBar item title
         for tabBarItem in self.tabBarController!.tabBar.items! {
             tabBarItem.title = ""
-            tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+            tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0)
         }
         
 //        self.navigationController!.toolbar.backgroundColor = UIColor.redColor()
