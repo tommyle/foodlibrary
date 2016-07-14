@@ -340,21 +340,58 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yii-pE-luU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="362"/>
+            <point key="canvasLocation" x="2778" y="-422"/>
         </scene>
-        <!--Groceries-->
+        <!--Groceries List-->
         <scene sceneID="qyr-Yi-OwK">
             <objects>
                 <navigationController id="bGc-LG-6oo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Groceries" image="CartIconAlt" selectedImage="CartIcon" id="aGY-Pw-6k0"/>
+                    <tabBarItem key="tabBarItem" title="Groceries List" image="CartIconAlt" selectedImage="CartIcon" id="aGY-Pw-6k0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DiP-8V-IOV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="oS3-n1-k44" kind="relationship" relationship="rootViewController" id="iqx-RT-dxK"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQW-Hl-ewi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44" y="362"/>
+        </scene>
+        <!--Grocery View Controller-->
+        <scene sceneID="cJB-oE-jqF">
+            <objects>
+                <viewController id="oS3-n1-k44" customClass="GroceryViewController" customModule="foodlibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vds-g7-0QA"/>
+                        <viewControllerLayoutGuide type="bottom" id="U0h-n1-GAR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rA2-2S-Iv4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U1b-4U-KnV">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U0h-n1-GAR" firstAttribute="top" secondItem="U1b-4U-KnV" secondAttribute="bottom" id="Li1-fN-hQP"/>
+                            <constraint firstItem="U1b-4U-KnV" firstAttribute="leading" secondItem="rA2-2S-Iv4" secondAttribute="leading" id="Lp6-Rp-RMb"/>
+                            <constraint firstItem="U1b-4U-KnV" firstAttribute="top" secondItem="vds-g7-0QA" secondAttribute="bottom" id="SZZ-RY-0VG"/>
+                            <constraint firstAttribute="trailing" secondItem="U1b-4U-KnV" secondAttribute="trailing" id="h8c-B0-GaD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vzB-0h-0Vh"/>
+                    <connections>
+                        <outlet property="tableView" destination="U1b-4U-KnV" id="JRa-IW-kam"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fU1-Nf-kUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="362"/>
         </scene>
         <!--Edit Recipe View Controller-->
         <scene sceneID="cHa-8O-DGb">
@@ -386,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8q-4r-nHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="362"/>
+            <point key="canvasLocation" x="2108" y="-422"/>
         </scene>
         <!--Add Category Table View Controller-->
         <scene sceneID="d0i-2v-Fzs">

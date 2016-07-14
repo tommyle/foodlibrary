@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import HidingNavigationBar
 
 class RecipeListingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    var hidingNavBarManager: HidingNavigationBarManager?
     
     var category: Category!
     var recipes: [Recipe]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: self.tableView)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(addTapped))
         
@@ -32,13 +36,28 @@ class RecipeListingViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        hidingNavBarManager?.viewWillAppear(animated)
+        
         self.fetchAllRecipes()
         self.tableView.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        hidingNavBarManager?.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        hidingNavBarManager?.viewWillDisappear(animated)
+    }
+    
+    func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
+        hidingNavBarManager?.shouldScrollToTop()
+        
+        return true
     }
     
     // MARK: - TableViewDelegate

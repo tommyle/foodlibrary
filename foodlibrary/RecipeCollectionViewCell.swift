@@ -28,10 +28,8 @@ class RecipeCollectionViewCell: UICollectionViewCell {
         self.imageView.layer.masksToBounds = true
     }
     
-    func setCell(title:String, imagePath:String) {
-        let filePath = (applicationDocumentsDirectory as NSString).stringByAppendingPathComponent(imagePath)
-        
+    func setCell(title:String, image:UIImage) {
         self.titleLabel.text = title
-        self.imageView.image = UIImage(contentsOfFile: filePath)
+        self.imageView.image = image
     }
 }

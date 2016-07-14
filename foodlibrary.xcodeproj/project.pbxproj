@@ -46,6 +46,9 @@
 		7285B4D41D221DB300EF3101 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7285B4D31D221DB300EF3101 /* Functions.swift */; };
 		72A5EFF21D349214003AF71E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5EFF01D349214003AF71E /* CategoryTableViewCell.swift */; };
 		72A5EFF31D349214003AF71E /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A5EFF11D349214003AF71E /* CategoryTableViewCell.xib */; };
+		72A5EFF91D34A092003AF71E /* GroceryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5EFF71D34A092003AF71E /* GroceryTableViewCell.swift */; };
+		72A5EFFA1D34A092003AF71E /* GroceryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A5EFF81D34A092003AF71E /* GroceryTableViewCell.xib */; };
+		72A5EFFC1D34A0BA003AF71E /* GroceryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5EFFB1D34A0BA003AF71E /* GroceryViewController.swift */; };
 		72AAAD631D1718B0005FBEF2 /* RecipeListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */; };
 		72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */; };
 		72ADFE701D2855A80093ACE6 /* Oxygen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72ADFE6D1D2855A80093ACE6 /* Oxygen-Bold.ttf */; };
@@ -105,6 +108,9 @@
 		7285B4D31D221DB300EF3101 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		72A5EFF01D349214003AF71E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		72A5EFF11D349214003AF71E /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		72A5EFF71D34A092003AF71E /* GroceryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryTableViewCell.swift; sourceTree = "<group>"; };
+		72A5EFF81D34A092003AF71E /* GroceryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroceryTableViewCell.xib; sourceTree = "<group>"; };
+		72A5EFFB1D34A0BA003AF71E /* GroceryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryViewController.swift; sourceTree = "<group>"; };
 		72AAAD611D1718B0005FBEF2 /* RecipeListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListingTableViewCell.swift; sourceTree = "<group>"; };
 		72AAAD621D1718B0005FBEF2 /* RecipeListingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListingTableViewCell.xib; sourceTree = "<group>"; };
 		72ADFE6D1D2855A80093ACE6 /* Oxygen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oxygen-Bold.ttf"; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 		721FEE9A1D15BC4D007E6463 /* foodlibrary */ = {
 			isa = PBXGroup;
 			children = (
+				72A5EFF41D349FF9003AF71E /* Cart */,
 				7217C6671D348E50004FDBC5 /* Assets.xcassets */,
 				72ADFE7C1D2B61FF0093ACE6 /* Parser */,
 				721519521D19A0FF00CFF554 /* Libraries */,
@@ -280,6 +287,16 @@
 				727A71731D1783C400AAF0A1 /* Edit */,
 			);
 			name = Recipe;
+			sourceTree = "<group>";
+		};
+		72A5EFF41D349FF9003AF71E /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				72A5EFFB1D34A0BA003AF71E /* GroceryViewController.swift */,
+				72A5EFF71D34A092003AF71E /* GroceryTableViewCell.swift */,
+				72A5EFF81D34A092003AF71E /* GroceryTableViewCell.xib */,
+			);
+			name = Cart;
 			sourceTree = "<group>";
 		};
 		72ADFE6C1D28559C0093ACE6 /* Fonts */ = {
@@ -394,6 +411,7 @@
 				72AAAD641D1718B0005FBEF2 /* RecipeListingTableViewCell.xib in Resources */,
 				7230553F1D270DCF0034ACE7 /* RecipeViewController.xib in Resources */,
 				7279FCEE1D32D3CE00F8CF26 /* RecipeListingExViewController.xib in Resources */,
+				72A5EFFA1D34A092003AF71E /* GroceryTableViewCell.xib in Resources */,
 				7230554D1D278F4D0034ACE7 /* TitleHeaderView.xib in Resources */,
 				721FEEA31D15BC4D007E6463 /* Main.storyboard in Resources */,
 			);
@@ -456,6 +474,7 @@
 			files = (
 				72AAAD631D1718B0005FBEF2 /* RecipeListingTableViewCell.swift in Sources */,
 				72B11CB31D1EC2C800D4737F /* ExpandablePickerView.swift in Sources */,
+				72A5EFFC1D34A0BA003AF71E /* GroceryViewController.swift in Sources */,
 				7285B4B31D20422600EF3101 /* Ingredient.swift in Sources */,
 				727ACD201D18F463005BE002 /* EditRecipeTableViewController.swift in Sources */,
 				723055511D27923B0034ACE7 /* SectionHeaderView.swift in Sources */,
@@ -477,6 +496,7 @@
 				721FEEB21D15BE39007E6463 /* Model.xcdatamodeld in Sources */,
 				7230553E1D270DCF0034ACE7 /* RecipeViewController.swift in Sources */,
 				7285B4B11D20422600EF3101 /* Recipe.swift in Sources */,
+				72A5EFF91D34A092003AF71E /* GroceryTableViewCell.swift in Sources */,
 				72ADFE801D2B62410093ACE6 /* Parser.swift in Sources */,
 				72ADFE751D2887AE0093ACE6 /* InstructionTableViewCell.swift in Sources */,
 				7279FCE91D32CAEF00F8CF26 /* RecipeCollectionViewCell.swift in Sources */,

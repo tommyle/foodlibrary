@@ -7,19 +7,27 @@
 //
 
 import UIKit
+import HidingNavigationBar
 
 private let reuseIdentifier = "RecipeCollectionViewCell"
 private let margin: CGFloat = 10.0
 private let sectionInsets = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
 
-class RecipeListingExViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class RecipeListingExViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, RecipeViewControllerDelegate {
+
+    var hidingNavBarManager: HidingNavigationBarManager?
 
     var category: Category!
     var recipes: [Recipe]!
+    var selectedIndexPath: NSIndexPath?
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: self.collectionView)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(addTapped))
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -44,11 +52,38 @@ class RecipeListingExViewController: UIViewController, UICollectionViewDataSourc
         self.view.backgroundColor = Helper.UIColorFromRGB(0xf8f8fc)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        hidingNavBarManager?.viewWillAppear(animated)
+        
+        if (category.name == "All") {
+            recipes = category.fetchAllRecipes()
+        }
+        else {
+            recipes = category.fetchRecipes()
+        }
+        
+        self.collectionView.reloadData()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        hidingNavBarManager?.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        hidingNavBarManager?.viewWillDisappear(animated)
+    }
+    
+    func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
+        hidingNavBarManager?.shouldScrollToTop()
+        
+        return true
+    }
 
     // MARK: UICollectionViewDataSource
     
@@ -66,16 +101,20 @@ class RecipeListingExViewController: UIViewController, UICollectionViewDataSourc
         let cell:RecipeCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! RecipeCollectionViewCell
         
         let recipe: Recipe = recipes[indexPath.row]
-        cell.setCell(recipe.name!, imagePath: recipe.imagePath!)
+        cell.setCell(recipe.name!, image: recipe.getImage())
         
         return cell as UICollectionViewCell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        self.selectedIndexPath = indexPath
+        
         let recipe: Recipe! = self.recipes[indexPath.row]
 
         let recipeViewController = RecipeViewController()
         recipeViewController.recipe = recipe
+        recipeViewController.delegate = self
         
         self.navigationController?.pushViewController(recipeViewController, animated: true)
     }
@@ -98,5 +137,29 @@ class RecipeListingExViewController: UIViewController, UICollectionViewDataSourc
                         layout collectionViewLayout: UICollectionViewLayout,
                                insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return sectionInsets
+    }
+    
+    // MARK: Actions
+    
+    func addTapped() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("EditRecipeViewController") as! EditRecipeViewController
+        vc.category = category
+        
+        let nav:UINavigationController = UINavigationController.init(rootViewController: vc)
+        
+        self.navigationController?.presentViewController(nav, animated: true, completion: nil)
+    }
+    
+    //MARK: RecipeViewControllerDelegate
+    
+    func didDeleteRecipe(sender: RecipeViewController) {
+        if (self.selectedIndexPath != nil) {
+            self.recipes.removeAtIndex(selectedIndexPath!.row)
+            self.collectionView.deleteItemsAtIndexPaths([selectedIndexPath!])
+            self.collectionView.reloadItemsAtIndexPaths([selectedIndexPath!])
+//            self.collectionView.reloadData()
+        }
     }
 }

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Sets color of the tab bar items when they are selected
-        UITabBar.appearance().tintColor = Helper.UIColorFromRGB(0x9274ed)
+        UITabBar.appearance().tintColor = Helper.UIColorFromRGB(0x4bba5a)//(0x9274ed)
 
         MagicalRecord.setupCoreDataStackWithStoreNamed("Model")
                         

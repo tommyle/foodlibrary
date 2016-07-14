@@ -16,6 +16,12 @@ class BrowserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Oxygen-Regular", size: 18)!]
+        self.navigationController!.navigationBar.backgroundColor = UIColor.whiteColor()
+        self.navigationController!.navigationBar.tintColor = Helper.UIColorFromRGB(0x9274ED)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.translucent = false
+        
 //        Parser.parse("http://allrecipes.com/recipe/127565/steak-on-a-stick/?internalSource=previously%20viewed&referringContentType=home%20page")
     }
 

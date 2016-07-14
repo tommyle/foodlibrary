@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import HidingNavigationBar
+
+protocol RecipeViewControllerDelegate: class {
+    func didDeleteRecipe(sender: RecipeViewController)
+}
 
 class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EditRecipeViewControllerDelegate {
+    
+    weak var delegate:RecipeViewControllerDelegate?
+    
+    var hidingNavBarManager: HidingNavigationBarManager?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,7 +27,11 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(editTapped))
+        let editButton = UIBarButtonItem(image: UIImage(named: "EditIcon")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(editTapped))
+        
+        let deleteButton = UIBarButtonItem(image: UIImage(named: "DeleteIcon")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(deleteTapped))
+        
+        self.navigationItem.setRightBarButtonItems([editButton, deleteButton], animated: true)
         
         self.tableView.registerNib(UINib(nibName: "IngredientTableViewCell", bundle: nil), forCellReuseIdentifier: "IngredientTableViewCell")
         
@@ -33,9 +46,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Parallax Header
         let headerView = ParallaxHeader.instanciateFromNib()
-        let filePath = (applicationDocumentsDirectory as NSString).stringByAppendingPathComponent(self.recipe.imagePath!)
         
-        headerView.backgroundImage.image = UIImage(contentsOfFile: filePath)
+        headerView.backgroundImage.image = self.recipe.getImage()
         
         self.tableView.parallaxHeader.view = headerView
         self.tableView.parallaxHeader.height = 250
@@ -45,8 +57,34 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.backgroundColor = UIColor.clearColor()
         
         self.data = [["Header"], recipe.ingredients!.array, recipe.instructions!.array]
+        
+//        hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: self.tableView)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        hidingNavBarManager?.viewWillAppear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        hidingNavBarManager?.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        hidingNavBarManager?.viewWillDisappear(animated)
+    }
+    
+    func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
+        hidingNavBarManager?.shouldScrollToTop()
+        
+        return true
+    }
+
     // MARK: Helper Methods
     func dateToString(date: NSDate) -> String {
         let calendar = NSCalendar.currentCalendar()
@@ -131,8 +169,15 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         default:
             cell = tableView.dequeueReusableCellWithIdentifier("InformationTableViewCell", forIndexPath: indexPath) as! InformationTableViewCell
             
-            let prepTimeString = Helper.dateToString(self.recipe.prepTime!)
-            let cookTimeString = Helper.dateToString(self.recipe.cookTime!)
+            var prepTimeString = ""
+            if (self.recipe.prepTime != nil) {
+                prepTimeString = Helper.dateToString(self.recipe.prepTime!)
+            }
+            
+            var cookTimeString = ""
+            if (self.recipe.cookTime != nil) {
+                cookTimeString = Helper.dateToString(self.recipe.cookTime!)
+            }
             
             (cell as! InformationTableViewCell).timeLabel.attributedText = Helper.StyleTime(prepTimeString, cookTime: cookTimeString)
         }
@@ -175,10 +220,34 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.presentViewController(nav, animated: true, completion: nil)
     }
     
+    func deleteTapped() {
+        let alert = UIAlertController(title: "Delete Recipe", message: "Are you sure you want to delete this recipe?", preferredStyle: UIAlertControllerStyle.Alert);
+
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel, handler: nil));
+
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: {(action:UIAlertAction) in
+            
+            self.recipe.deleteEntity()
+            NSManagedObjectContext.defaultContext().saveToPersistentStoreAndWait()
+            
+            self.didDeleteRecipe(self)
+            
+            self.navigationController?.popViewControllerAnimated(true)
+        }));
+        
+        presentViewController(alert, animated: true, completion: nil);
+    }
+    
     //MARK: EditRecipeViewControllerDelegate
     func didSaveRecipe(sender: EditRecipeViewController) {
         self.recipe = sender.recipe
         self.data = [["Header"], self.recipe.ingredients!.array, self.recipe.instructions!.array]
         self.tableView.reloadData()
+    }
+}
+
+extension RecipeViewController: RecipeViewControllerDelegate {
+    func didDeleteRecipe(sender: RecipeViewController) {
+        delegate?.didDeleteRecipe(self)
     }
 }

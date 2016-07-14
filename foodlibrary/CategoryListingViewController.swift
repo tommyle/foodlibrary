@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import HidingNavigationBar
 
 class CategoryListingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    var hidingNavBarManager: HidingNavigationBarManager?
     
     var categories: [Category]!
 
@@ -33,7 +35,7 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
 //        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Oxygen-Regular", size: 18)!]
         self.navigationController!.navigationBar.backgroundColor = UIColor.whiteColor()
-        self.navigationController!.navigationBar.tintColor = Helper.UIColorFromRGB(0x9274ED)
+        self.navigationController!.navigationBar.tintColor = Helper.UIColorFromRGB(0x202020)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.translucent = false;
         
@@ -52,10 +54,14 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
             self.createCategories()
             self.fetchAllCategories()
         }
+        
+//        self.hidingNavBarManager = HidingNavigationBarManager(viewController: self, scrollView: self.tableView)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        hidingNavBarManager?.viewWillAppear(animated)
         
         self.fetchAllCategories()
         self.tableView.reloadData()
@@ -64,6 +70,24 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        hidingNavBarManager?.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        hidingNavBarManager?.viewWillDisappear(animated)
+    }
+    
+    func scrollViewShouldScrollToTop(scrollView: UIScrollView) -> Bool {
+        hidingNavBarManager?.shouldScrollToTop()
+        
+        return true
     }
     
     // MARK: - Helper Methods

@@ -10,7 +10,6 @@ import UIKit
 import DZNWebViewController
 import PKHUD
 import HidingNavigationBar
-import MEVFloatingButton
 
 class WebViewController: DZNWebViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
 
@@ -84,11 +83,7 @@ class WebViewController: DZNWebViewController, UISearchControllerDelegate, UISea
         
         return true
     }
-    
-    func searchButtonPressed() {
-        
-    }
-    
+
     func saveButtonPressed() {
         if (self.webView.URL?.absoluteString == nil) {
             return
