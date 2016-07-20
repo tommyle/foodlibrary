@@ -19,6 +19,14 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        if let patternImage = UIImage(named: "Pattern") {
+//            view.backgroundColor = UIColor(patternImage: patternImage)
+//            tableView!.backgroundColor = UIColor.clearColor()
+//        }
+        
+        //hides empty cells
+        self.tableView.tableFooterView = UIView()
+        
         self.tabBarController!.tabBar.barTintColor = UIColor.whiteColor()
         self.tabBarController!.tabBar.translucent = false
         
@@ -125,14 +133,14 @@ class CategoryListingViewController: UIViewController, UITableViewDelegate, UITa
         let cell : CategoryTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CategoryTableViewCell
         
         let cateogry:Category = categories[indexPath.row]
-        
-        cell.label?.text = cateogry.name!
+                
+        cell.setCategoryLabel(cateogry.name)
         
         if (cateogry.name == "All") {
-            cell.count?.text = String(cateogry.fetchCountAll())
+            cell.setCountLabel(cateogry.fetchCountAll())
         }
         else {
-            cell.count?.text = String(cateogry.fetchCount())
+            cell.setCountLabel(cateogry.fetchCount())
         }
         
         return cell

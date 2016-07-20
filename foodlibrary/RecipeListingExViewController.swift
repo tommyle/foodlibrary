@@ -101,7 +101,7 @@ class RecipeListingExViewController: UIViewController, UICollectionViewDataSourc
         let cell:RecipeCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! RecipeCollectionViewCell
         
         let recipe: Recipe = recipes[indexPath.row]
-        cell.setCell(recipe.name!, image: recipe.getImage())
+        cell.setCell(recipe.name, image: recipe.getImage())
         
         return cell as UICollectionViewCell
     }

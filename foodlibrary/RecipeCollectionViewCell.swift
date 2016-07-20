@@ -28,7 +28,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
         self.imageView.layer.masksToBounds = true
     }
     
-    func setCell(title:String, image:UIImage) {
+    func setCell(title:String?, image:UIImage?) {
         self.titleLabel.text = title
         self.imageView.image = image
     }

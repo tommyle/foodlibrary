@@ -12,6 +12,7 @@
         </mutableArray>
         <mutableArray key="Oxygen-Regular.ttf">
             <string>Oxygen-Regular</string>
+            <string>Oxygen-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -21,35 +22,58 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVH-l1-RrM">
-                        <rect key="frame" x="22" y="8" width="243.5" height="27.5"/>
-                        <fontDescription key="fontDescription" name="Oxygen-Regular" family="Oxygen" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 recipes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D9F-MW-5nr">
+                        <rect key="frame" x="216" y="8" width="96" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="odw-2z-rqL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Oxygen-Light" family="Oxygen" pointSize="15"/>
                         <color key="textColor" red="0.41176470590000003" green="0.43137254899999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D9F-MW-5nr">
-                        <rect key="frame" x="273.5" y="8" width="38.5" height="27.5"/>
-                        <fontDescription key="fontDescription" name="Oxygen-Light" family="Oxygen" pointSize="17"/>
-                        <color key="textColor" red="0.41176470590000003" green="0.43137254899999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yez-Rt-yex">
+                        <rect key="frame" x="23" y="6" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="VLf-td-dSi"/>
+                            <constraint firstAttribute="width" constant="30" id="oIO-JK-f2g"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Oxygen-Regular" family="Oxygen" pointSize="17"/>
+                        <color key="textColor" red="0.1529411765" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVH-l1-RrM">
+                        <rect key="frame" x="68" y="8" width="140" height="28"/>
+                        <fontDescription key="fontDescription" name="Oxygen-Regular" family="Oxygen" pointSize="17"/>
+                        <color key="textColor" red="0.1529411765" green="0.1843137255" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="D9F-MW-5nr" secondAttribute="trailing" id="8dO-gE-5H4"/>
-                    <constraint firstItem="lVH-l1-RrM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="J6z-Nv-xld"/>
-                    <constraint firstItem="D9F-MW-5nr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.12" id="YMm-tp-iNX"/>
+                    <constraint firstItem="Yez-Rt-yex" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GwZ-WG-gXi"/>
+                    <constraint firstItem="Yez-Rt-yex" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="Ndm-fw-Sx6"/>
+                    <constraint firstItem="D9F-MW-5nr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" constant="32" id="YMm-tp-iNX"/>
+                    <constraint firstItem="D9F-MW-5nr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="beH-JJ-tLL"/>
+                    <constraint firstItem="lVH-l1-RrM" firstAttribute="leading" secondItem="Yez-Rt-yex" secondAttribute="trailing" constant="15" id="bgI-S4-B3q"/>
                     <constraint firstItem="D9F-MW-5nr" firstAttribute="leading" secondItem="lVH-l1-RrM" secondAttribute="trailing" constant="8" id="gg4-J3-Ywy"/>
                     <constraint firstItem="D9F-MW-5nr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="hX5-Xf-SQH"/>
-                    <constraint firstItem="D9F-MW-5nr" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="jyA-hQ-bUI"/>
+                    <constraint firstItem="D9F-MW-5nr" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="1" id="jyA-hQ-bUI"/>
                     <constraint firstItem="lVH-l1-RrM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="rNl-If-75U"/>
-                    <constraint firstItem="lVH-l1-RrM" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="sng-ia-sHt"/>
+                    <constraint firstItem="lVH-l1-RrM" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="1" id="sng-ia-sHt"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="hX5-Xf-SQH"/>
+                        <exclude reference="jyA-hQ-bUI"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="count" destination="D9F-MW-5nr" id="Mbt-W5-YgZ"/>
+                <outlet property="iconLabel" destination="Yez-Rt-yex" id="T6X-rd-kSt"/>
                 <outlet property="label" destination="lVH-l1-RrM" id="2CD-HJ-RUw"/>
             </connections>
         </tableViewCell>
